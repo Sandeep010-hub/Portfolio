@@ -1,0 +1,13 @@
+Place your project images here:
+- webortex-website.jpg
+- restaurant-app.jpg  
+- job-bridge.jpg
+- ems-system.jpg
+- koinx-dashboard.jpg
+- inside-journal.jpg
+- 64-frames.jpg
+
+For now, you can use placeholder images from:
+- https://picsum.photos/400/300
+- https://via.placeholder.com/400x300
+- Or add your own project screenshots 
