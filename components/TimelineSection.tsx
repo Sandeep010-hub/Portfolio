@@ -47,7 +47,7 @@ const timeline = [
 
 const TimelineSection = () => {
   return (
-    <section id="experience" className="py-20 unified-bg">
+    <section id="experience" className="py-16 unified-bg scroll-mt-20">
       {/* SVG Section Divider */}
       <svg className="w-full h-12 mb-8" viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0,40 Q720,80 1440,40 L1440,60 L0,60Z" fill="#3b82f6" fillOpacity="0.08" />

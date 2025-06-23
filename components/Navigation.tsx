@@ -18,7 +18,7 @@ const Navigation = () => {
 
   const navItems = [
     { name: 'Home', href: '#home' },
-    { name: 'Skills', href: '#skills' },
+    { name: 'Skills', href: '#tech-stack' },
     { name: 'Projects', href: '#projects' },
     { name: 'Experience', href: '#experience' },
     { name: 'Contact', href: '#contact' },
@@ -52,19 +52,30 @@ const Navigation = () => {
             <div className="w-8 h-8 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-sm">YS</span>
             </div>
-            <span className="font-bold text-lg gradient-text">Yaswanth.dev</span>
+            <button
+              onClick={() => scrollToSection('#home')}
+              className="font-bold text-lg bg-transparent border-none outline-none cursor-pointer p-0 m-0"
+              style={{ background: 'none' }}
+              aria-label="Go to home section"
+            >
+              <span className="gradient-text">Yaswanth.dev</span>
+            </button>
           </motion.div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <button
+              <a
                 key={item.name}
-                onClick={() => scrollToSection(item.href)}
+                href={item.href}
+                onClick={e => {
+                  e.preventDefault();
+                  scrollToSection(item.href);
+                }}
                 className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 font-medium"
               >
                 {item.name}
-              </button>
+              </a>
             ))}
           </div>
 
@@ -93,13 +104,20 @@ const Navigation = () => {
         >
           <div className="py-4 space-y-2">
             {navItems.map((item) => (
-              <button
+              <a
                 key={item.name}
-                onClick={() => scrollToSection(item.href)}
+                href={item.href}
+                onClick={e => {
+                  e.preventDefault();
+                  setIsOpen(false);
+                  setTimeout(() => {
+                    scrollToSection(item.href);
+                  }, 350); // Wait for menu to close
+                }}
                 className="block w-full text-left px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
               >
                 {item.name}
-              </button>
+              </a>
             ))}
           </div>
         </motion.div>

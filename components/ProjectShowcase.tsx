@@ -157,7 +157,7 @@ const ProjectShowcase = () => {
 
   return (
     <>
-      <section id="projects" className="py-20 unified-bg pb-32">
+      <section id="projects" className="py-16 unified-bg pb-2 scroll-mt-20">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -8,7 +8,9 @@ import ContactSection from '@/components/ContactSection'
 import Footer from '@/components/Footer'
 import Navigation from '@/components/Navigation'
 
-export default function Home() {
+export default async function Home() {
+  // Simulate loading delay
+  await new Promise(resolve => setTimeout(resolve, 1500));
   return (
     <main className="min-h-screen bg-background">
       <Navigation />

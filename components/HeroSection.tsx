@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { ArrowDown, Download, Mail, Github, Linkedin } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { useTransition, animated } from '@react-spring/web'
 
 const morphWords = [
@@ -45,6 +45,23 @@ const MorphingWord = ({ words, interval = 2000 }: { words: string[]; interval?: 
 }
 
 const HeroSection = () => {
+  const [mousePos, setMousePos] = useState<{ x: number; y: number } | null>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (sectionRef.current) {
+      const rect = sectionRef.current.getBoundingClientRect();
+      setMousePos({
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top,
+      });
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setMousePos(null);
+  };
+
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href)
     if (element) {
@@ -53,7 +70,30 @@ const HeroSection = () => {
   }
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden hero-bg pt-12">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden hero-bg pt-20 scroll-mt-16"
+      ref={sectionRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{ position: 'relative' }}
+    >
+      {/* Radial gradient following mouse */}
+      {mousePos && (
+        <div
+          style={{
+            position: 'absolute',
+            left: 0,
+            top: 0,
+            width: '100%',
+            height: '100%',
+            pointerEvents: 'none',
+            zIndex: 1,
+            background: `radial-gradient(200px circle at ${mousePos.x}px ${mousePos.y}px, rgba(0,201,255,0.10), transparent 70%)`,
+            transition: 'background 0.2s',
+          }}
+        />
+      )}
       {/* Decorative SVG Stars */}
       <svg className="absolute left-1/4 top-1/3 w-8 h-8 opacity-30 z-0" viewBox="0 0 24 24" fill="none"><path d="M12 2L13.09 8.26L19 8.27L14.18 11.97L15.27 18.23L12 14.77L8.73 18.23L9.82 11.97L5 8.27L10.91 8.26L12 2Z" fill="#fff"/></svg>
       <svg className="absolute right-1/4 bottom-1/4 w-6 h-6 opacity-20 z-0" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="2" fill="#fff"/></svg>

@@ -28,7 +28,7 @@ const TechStackSection = () => {
     : techCategories.find(cat => cat.name === selectedCategory)?.technologies || []
 
   return (
-    <section id="tech-stack" className="py-20 unified-bg">
+    <section id="tech-stack" className="py-16 unified-bg scroll-mt-20">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
