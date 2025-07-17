@@ -25,7 +25,7 @@ const Footer = () => {
     },
     {
       name: 'Resume',
-      url: 'https://drive.google.com/file/d/1Y6lnpOE8FmLgeBPCkM6HkYXUHhsFcbpX/view?usp=drive_link',
+      url: 'https://drive.google.com/file/d/1l9St2w85iwg6xZwha1DPqnRnnpS7IFaw/view?usp=drive_link',
       icon: <FileText className="w-5 h-5" />,
     },
   ]
