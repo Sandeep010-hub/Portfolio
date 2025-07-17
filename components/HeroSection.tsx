@@ -175,7 +175,7 @@ const HeroSection = () => {
             </motion.button>
 
             <motion.a
-              href="https://drive.google.com/file/d/1Y6lnpOE8FmLgeBPCkM6HkYXUHhsFcbpX/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1l9St2w85iwg6xZwha1DPqnRnnpS7IFaw/view?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
