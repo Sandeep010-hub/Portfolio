@@ -112,7 +112,7 @@ const HeroSection = () => {
             transition={{ delay: 0.2 }}
             className="text-lg text-gray-400 dark:text-gray-300 font-medium"
           >
-            👋 Hello, I'm
+            
           </motion.p>
 
           {/* Name */}
