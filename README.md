@@ -3,7 +3,7 @@
 A modern, full-stack developer portfolio built with Next.js App Router, Tailwind CSS, Framer Motion, and TypeScript.
 
 ## 🚀 Live Demo
-[Portfolio Website](https://webortex.com)
+[Portfolio Website](https://saisandeepkalagatala.vercel.app/)
 
 ## 👤 About
 Showcasing my work as a Full Stack Developer, Co-Founder & CTO at WEBORTEX. Includes real project case studies, tech stack, timeline, testimonials, and contact info.
