@@ -87,13 +87,6 @@ export const techCategories: TechCategory[] = [
         description: 'Minimal and flexible Node.js web application framework'
       },
       {
-        name: 'Spring Boot',
-        icon: '🍃',
-        category: 'Backend',
-        proficiency: 'Intermediate',
-        description: 'Java-based framework for building microservices'
-      },
-      {
         name: 'Java',
         icon: '☕',
         category: 'Backend',
@@ -126,13 +119,6 @@ export const techCategories: TechCategory[] = [
         category: 'Database',
         proficiency: 'Intermediate',
         description: 'Relational database management system'
-      },
-      {
-        name: 'PostgreSQL',
-        icon: '🐘',
-        category: 'Database',
-        proficiency: 'Intermediate',
-        description: 'Advanced open-source relational database'
       },
       {
         name: 'Redis',
@@ -245,4 +231,4 @@ export const techCategories: TechCategory[] = [
 export const allTechnologies = techCategories.flatMap(category => category.technologies)
 
 // Get unique categories
-export const categories = techCategories.map(cat => cat.name) 
+export const categories = techCategories.map(cat => cat.name)

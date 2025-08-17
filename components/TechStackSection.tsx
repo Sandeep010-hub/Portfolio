@@ -2,11 +2,10 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
-import { techCategories } from '../data/techstack'
+import { techCategories, TechItem } from '../data/techstack'
 
-// Flatten all techs from all categories
-const allTechs = techCategories.flatMap((cat) => cat.technologies)
-const allCategories = ['All', ...techCategories.map(cat => cat.name)]
+// Get all categories
+const allCategories = techCategories.map((cat: any) => cat.name)
 
 const getProficiencyColor = (proficiency: string) => {
   switch (proficiency) {
@@ -19,13 +18,11 @@ const getProficiencyColor = (proficiency: string) => {
 }
 
 const TechStackSection = () => {
-  const [selectedTech, setSelectedTech] = useState<any | null>(null)
-  const [selectedCategory, setSelectedCategory] = useState<string>('All')
+  const [selectedTech, setSelectedTech] = useState<TechItem | null>(null)
+  const [selectedCategory, setSelectedCategory] = useState<string>('Frontend Development')
   const [hoveredTech, setHoveredTech] = useState<string | null>(null)
 
-  const filteredTechs = selectedCategory === 'All'
-    ? allTechs
-    : techCategories.find(cat => cat.name === selectedCategory)?.technologies || []
+  const currentTechnologies = techCategories.find((cat: any) => cat.name === selectedCategory)?.technologies || []
 
   return (
     <section id="tech-stack" className="py-16 unified-bg scroll-mt-20">
@@ -44,9 +41,9 @@ const TechStackSection = () => {
           </p>
         </motion.div>
 
-        {/* Filter Bar */}
+        {/* Category Filter Bar */}
         <div className="flex flex-wrap gap-2 justify-center mb-8 overflow-x-auto scrollbar-hide">
-          {allCategories.map((cat) => (
+          {allCategories.map((cat: string) => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
@@ -61,10 +58,26 @@ const TechStackSection = () => {
           ))}
         </div>
 
+        {/* Category Description */}
+        <motion.div
+          key={selectedCategory}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+          className="text-center mb-8"
+        >
+          <p className="text-gray-600 dark:text-gray-300 text-lg">
+            {techCategories.find((cat: any) => cat.name === selectedCategory)?.description}
+          </p>
+        </motion.div>
+
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
-          {filteredTechs.map((tech, i) => (
+          {currentTechnologies.map((tech: TechItem, i: number) => (
             <motion.div
               key={tech.name}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: i * 0.1, duration: 0.5 }}
               whileHover={{ scale: 1.07, boxShadow: '0 8px 32px rgba(59,130,246,0.18)' }}
               whileTap={{ scale: 0.98 }}
               className="relative cursor-pointer rounded-2xl p-6 pb-10 flex flex-col items-center justify-center glass-card transition-all duration-300 border border-white/30 dark:border-gray-700/40 shadow-lg backdrop-blur-md bg-white/40 dark:bg-gray-800/40 hover:ring-2 hover:ring-blue-400"
@@ -135,6 +148,15 @@ const TechStackSection = () => {
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 text-center">
                     {selectedTech.name}
                   </h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-center mb-4">
+                    {selectedTech.description}
+                  </p>
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm text-gray-500 dark:text-gray-400">Proficiency:</span>
+                    <span className={`px-2 py-1 rounded-full text-xs font-medium text-white ${getProficiencyColor(selectedTech.proficiency)}`}>
+                      {selectedTech.proficiency}
+                    </span>
+                  </div>
                 </div>
               </motion.div>
             </motion.div>
