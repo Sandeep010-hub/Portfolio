@@ -12,7 +12,7 @@ export interface TechCategory {
   technologies: TechItem[]
 }
 
-export const techCategories: TechCategory[] = [
+export const software_data: TechCategory[] = [
   {
     name: 'Frontend Development',
     description: 'Modern frontend technologies and frameworks',
@@ -227,8 +227,32 @@ export const techCategories: TechCategory[] = [
   }
 ]
 
+export const explorer_data: TechCategory[] = [
+  {
+    name: 'AEO & Ecosystem Architecture',
+    description: 'Modern Answer Engine Optimization and agentic mapping',
+    technologies: [
+      {
+        name: 'JSON-LD',
+        icon: '📊',
+        category: 'AEO',
+        proficiency: 'Expert',
+        description: 'Structuring knowledge graph inputs.'
+      },
+      {
+        name: 'Technical Writing',
+        icon: '✍️',
+        category: 'Thought Leadership',
+        proficiency: 'Advanced',
+        description: 'Building deep technical discourses.'
+      }
+    ]
+  }
+];
+
+export const techCategories = [...software_data, ...explorer_data]
 // Flatten all technologies for backward compatibility
 export const allTechnologies = techCategories.flatMap(category => category.technologies)
 
 // Get unique categories
-export const categories = techCategories.map(cat => cat.name)
+export const categories = software_data.map(cat => cat.name)

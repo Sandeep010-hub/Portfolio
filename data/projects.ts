@@ -5,7 +5,7 @@ export interface Project {
   longDescription: string
   image: string
   technologies: string[]
-  category: 'Full Stack' | 'Frontend' | 'Backend' | 'Mobile' | 'Client Project'
+  category: 'Full Stack' | 'Frontend' | 'Backend' | 'Mobile' | 'Client Project' | 'AI Integration' | 'Research'
   role: string
   duration: string
   liveUrl?: string
@@ -17,232 +17,190 @@ export interface Project {
   tags: string[]
 }
 
-export const projects: Project[] = [
+export const software_data: Project[] = [
   {
-    id: 'webortex-website',
-    title: 'WEBORTEX Official Website',
-    description: 'Official company website with SEO optimization and team onboarding features',
-    longDescription: 'A comprehensive company website built for WEBORTEX, featuring modern design, SEO optimization, and integrated team management tools. As Founder & CTO, I led the technical development and deployment.',
-    image: 'https://picsum.photos/400/300?random=1',
-    technologies: ['React.js', 'Tailwind CSS', 'Framer Motion', 'Node.js', 'MongoDB'],
-    category: 'Full Stack',
-    role: 'Founder & CTO',
-    duration: 'Aug 2023 - Present',
-    liveUrl: 'https://webortex.com',
-    githubUrl: 'https://github.com/webortex/website',
-    features: [
-      'SEO-optimized landing page with 98+ Lighthouse score',
-      'Team onboarding and management system',
-      'Client project showcase and portfolio',
-      'Responsive design across all devices',
-      'Admin dashboard for content management'
-    ],
-    challenges: [
-      'Optimizing for search engines while maintaining design quality',
-      'Implementing scalable team management features',
-      'Ensuring fast load times with rich animations'
-    ],
-    results: [
-      '50% increase in visitor retention',
-      'Improved search engine rankings',
-      'Streamlined client onboarding process'
-    ],
+    id: 'raglens-ai',
+    title: 'RAGLens AI',
+    description: 'Enterprise-grade Agentic RAG system for high-concurrency real-time AI data visualization.',
+    longDescription: 'Architected a distributed knowledge engine using FastAPI and LangGraph to process unstructured data with 98% accuracy[cite: 134, 181]. Optimized for high availability and fault-tolerant data retrieval in production environments[cite: 107, 157].',
+    image: '/RAGLens-ai.png',
+    technologies: ['FastAPI', 'Next.js 15', 'LangGraph', 'PostgreSQL', 'Python'],
+    category: 'AI Integration',
+    role: 'Lead Full-Stack Developer',
+    duration: 'Jan 2026 - Present',
+    githubUrl: 'https://github.com/Sandeep010-hub/RAGLens_AI',
+    features: ['Multi-agent orchestration', 'Sub-200ms latency [cite: 106, 158]', 'Context-aware retrieval'],
+    challenges: ['Maintaining 99.9% uptime [cite: 108, 158]', 'Vector search optimization'],
+    results: ['98% data accuracy [cite: 134, 181]', 'Sub-200ms real-time interaction [cite: 106, 158]'],
     featured: true,
-    tags: ['React', 'Tailwind CSS', 'Framer Motion', 'SEO', 'Team Management']
+    tags: ['Agentic RAG', 'AI Architecture', 'FastAPI']
   },
   {
-    id: '64-frames',
-    title: '64 Frames Landing Page',
-    description: 'High-conversion landing page for creative agency with smooth animations',
-    longDescription: 'A high-conversion landing page designed for 64 Frames creative agency. Features smooth UX animations, responsive layouts, and optimized conversion elements to increase client engagement.',
-    image: 'https://picsum.photos/400/300?random=2',
-    technologies: ['React.js', 'Tailwind CSS', 'Framer Motion', 'Vercel'],
+    id: 'promptcraft-fusion',
+    title: 'PromptCraft Fusion',
+    description: 'Cloud-integrated AI platform utilizing serverless Edge Functions for 5x prompt quality improvement[cite: 126, 177].',
+    longDescription: 'Engineered an AI-Native platform using Supabase Edge Functions and Gemini API[cite: 124, 175]. Optimized high-latency retrieval via advanced caching and multimodal storage for sub-second performance[cite: 127, 178].',
+    image: '/prompt-craft.png',
+    technologies: ['Next.js 15', 'Supabase', 'Gemini API', 'TypeScript', 'Edge Functions'],
+    category: 'AI Integration',
+    role: 'Full-Stack Architect',
+    duration: 'Aug 2025 - Present',
+    githubUrl: 'https://github.com/Sandeep010-hub/promptcraft-fusion',
+    liveUrl: 'https://promptcraft-fusion.netlify.app/',
+    features: ['Automated prompt scoring', 'Multimodal caching [cite: 127, 178]', 'RBAC security [cite: 120, 171]'],
+    challenges: ['Mitigating rendering blocks', 'Serverless state scaling'],
+    results: ['5x quality improvement [cite: 126, 177]', 'Sub-second performance [cite: 127, 178]'],
+    featured: true,
+    tags: ['Generative AI', 'Serverless', 'Supabase']
+  },
+  {
+    id: 'elite-construction',
+    title: 'Elite Construction & Design',
+    description: 'High-performance responsive platform with 95+ Lighthouse scores[cite: 130, 185].',
+    longDescription: 'Architected a world-class responsive platform achieving top-tier performance through code-splitting and lazy-loading, reducing initial bundle size by 40%[cite: 131, 186].',
+    image: '/elite.png',
+    technologies: ['React 18', 'TypeScript', 'Vite', 'Tailwind CSS'],
     category: 'Frontend',
-    role: 'Frontend Developer',
-    duration: '1 month',
-    liveUrl: 'https://64framez.com',
-    githubUrl: 'https://github.com/yourusername/64-frames',
-    features: [
-      'High-conversion landing page design',
-      'Smooth UX animations and transitions',
-      'Mobile-first responsive design',
-      'Performance optimized for fast loading',
-      'Contact form and lead generation tools'
-    ],
-    challenges: [
-      'Creating engaging animations without affecting performance',
-      'Optimizing for mobile usability',
-      'Implementing effective conversion elements'
-    ],
-    results: [
-      'Increased client engagement and inquiries',
-      'Improved mobile usability across devices',
-      'Enhanced brand perception and professionalism'
-    ],
+    role: 'Lead Front-end Architect',
+    duration: 'Aug 2025 - Present',
+    githubUrl: 'https://github.com/Sandeep010-hub/eliteConstructer',
+    liveUrl: 'https://eliteconstruct.netlify.app',
+    features: ['95+ Lighthouse score [cite: 130, 185]', 'Multi-step quote form', 'Accessibility-first (ARIA) [cite: 130, 185]'],
+    challenges: ['Bundle size optimization [cite: 131, 186]', 'Complex form state'],
+    results: ['40% bundle size reduction [cite: 131, 186]', 'Enhanced lead conversion'],
     featured: true,
-    tags: ['React', 'Tailwind CSS', 'Animation', 'Mobile-First', 'Conversion']
+    tags: ['Performance', 'Accessibility', 'UI/UX']
   },
   {
-    id: 'restaurant-management',
-    title: 'Restaurant Management System',
-    description: 'Full-stack MERN application for restaurant operations with role-based access',
-    longDescription: 'A comprehensive restaurant management system that enables customers to browse menus, place orders, and track delivery status. Features role-based access for admins and chefs with real-time order management.',
-    image: 'https://picsum.photos/400/300?random=3',
-    technologies: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'JWT'],
-    category: 'Full Stack',
-    role: 'Full Stack Developer',
-    duration: '3 months',
-    liveUrl: 'https://restaurant-app-demo.vercel.app',
-    githubUrl: 'https://github.com/yourusername/restaurant-management',
-    features: [
-      'Customer menu browsing and ordering system',
-      'Real-time order tracking and notifications',
-      'Role-based access control (Admin, Chef, Customer)',
-      'Payment integration and order history',
-      'Inventory management and analytics dashboard'
-    ],
-    challenges: [
-      'Implementing real-time order updates',
-      'Managing complex role-based permissions',
-      'Optimizing database queries for performance'
-    ],
-    results: [
-      'Reduced order processing time by 40%',
-      'Improved customer satisfaction scores',
-      'Streamlined kitchen operations'
-    ],
-    featured: true,
-    tags: ['MERN Stack', 'Real-time', 'RBAC', 'Payment Integration', 'Analytics']
-  },
-  {
-    id: 'ems-system',
-    title: 'Employee Management System (EMS)',
-    description: 'Spring Boot backend with React frontend for comprehensive employee management',
-    longDescription: 'A complete employee management system built with Spring Boot backend and React frontend. Features CRUD operations, role-based access control, and secure authentication for managing employee records.',
-    image: 'https://picsum.photos/400/300?random=4',
-    technologies: ['Spring Boot', 'Java', 'React.js', 'MySQL', 'JWT'],
-    category: 'Full Stack',
-    role: 'Full Stack Developer',
-    duration: '4 months',
-    githubUrl: 'https://github.com/yourusername/employee-management',
-    features: [
-      'Complete employee CRUD operations',
-      'Role-based access control (RBAC)',
-      'Secure token-based authentication',
-      'Employee performance tracking',
-      'Department and hierarchy management'
-    ],
-    challenges: [
-      'Implementing secure authentication system',
-      'Designing efficient database schema',
-      'Creating responsive admin interface'
-    ],
-    results: [
-      'Reduced unauthorized access issues by 40%',
-      'Improved data management efficiency',
-      'Enhanced user experience for administrators'
-    ],
-    featured: false,
-    tags: ['Spring Boot', 'Java', 'React', 'MySQL', 'Security']
-  },
-  {
-    id: 'koinx-dashboard',
-    title: 'Koinx Stock Analysis Dashboard',
-    description: 'Real-time stock analysis dashboard with technical indicators and data visualization',
-    longDescription: 'A comprehensive stock analysis dashboard that displays real-time market data with technical indicators. Built with modern charting libraries and external APIs for investment decision-making.',
-    image: 'https://picsum.photos/400/300?random=5',
-    technologies: ['React.js', 'Chart.js', 'Node.js', 'External APIs', 'WebSocket'],
-    category: 'Frontend',
-    role: 'Frontend Developer',
-    duration: '2 months',
-    githubUrl: 'https://github.com/yourusername/koinx-dashboard',
-    features: [
-      'Real-time stock price tracking',
-      'Technical indicators and analysis tools',
-      'Interactive charts and data visualization',
-      'Portfolio tracking and performance metrics',
-      'Market news and alerts integration'
-    ],
-    challenges: [
-      'Integrating multiple external APIs',
-      'Optimizing chart performance with large datasets',
-      'Implementing real-time data updates'
-    ],
-    results: [
-      'Provided valuable insights for investment decisions',
-      'Improved data visualization and user experience',
-      'Enhanced market analysis capabilities'
-    ],
-    featured: false,
-    tags: ['React', 'Chart.js', 'Real-time', 'APIs', 'Data Visualization']
-  },
-  {
-    id: 'inside-journal',
-    title: 'Inside Journal – Client Project',
-    description: 'Client project for journal publishing platform with custom UI and blog management',
-    longDescription: 'A custom journal publishing platform built for a client with specific requirements. Features responsive design, blog management capabilities, and SEO optimizations for better content discovery.',
-    image: 'https://picsum.photos/400/300?random=6',
-    technologies: ['React.js', 'Tailwind CSS', 'Node.js', 'MongoDB', 'SEO'],
+    id: 'kiritara-resort',
+    title: 'Kiritara Resort',
+    description: 'Premium hospitality web presence featuring high-fidelity visual storytelling.',
+    longDescription: 'Developed a high-performance hospitality platform focused on luxury aesthetics and seamless user conversion.',
+    image: '/kiritara.png',
+    technologies: ['React', 'Next.js', 'Tailwind CSS'],
     category: 'Client Project',
-    role: 'Lead Developer',
-    duration: '3 months',
-    liveUrl: 'https://insidejournal.netlify.app',
-    githubUrl: 'https://github.com/yourusername/inside-journal',
-    features: [
-      'Custom journal publishing interface',
-      'Blog management and content creation tools',
-      'SEO optimization for better search visibility',
-      'Responsive design for all devices',
-      'Author management and collaboration features'
-    ],
-    challenges: [
-      'Meeting specific client requirements and design preferences',
-      'Implementing SEO best practices',
-      'Ensuring responsive design across devices'
-    ],
-    results: [
-      'Successfully delivered client project on time',
-      'Improved search engine visibility',
-      'Enhanced user engagement and content discovery'
-    ],
-    featured: false,
-    tags: ['Client Project', 'React', 'Tailwind CSS', 'SEO', 'Content Management']
+    role: 'Lead UI/UX Designer',
+    duration: '2025',
+    liveUrl: 'https://kiritararesort.com/',
+    features: ['High-fidelity visual gallery', 'SEO-optimized architecture', 'Booking UI integration'],
+    challenges: ['High-res image optimization', 'Brand aesthetic maintenance'],
+    results: ['Production-ready launch', 'Improved mobile booking flow'],
+    featured: true,
+    tags: ['Hospitality', 'Client Work', 'Branding']
   },
   {
-    id: 'job-bridge',
-    title: 'Job Bridge – Career Platform',
-    description: 'Student portfolio platform bridging education-to-employment gap with AI guidance',
-    longDescription: 'A full-stack platform designed to help students showcase their projects and receive AI-based career guidance. The platform bridges the gap between education and employment through project portfolios and personalized recommendations.',
-    image: 'https://picsum.photos/400/300?random=7',
-    technologies: ['Next.js', 'TypeScript', 'Node.js', 'MongoDB', 'AI Integration'],
+    id: 'parallax-archive',
+    title: 'Archive Insight',
+    description: 'Advanced Semantic Analysis platform with an interactive Physics-based UI[cite: 9].',
+    longDescription: 'Leverages a Semantic Analysis Engine to detect idea-level duplication and assess project novelty[cite: 4]. Features a dynamic Particle Canvas Hero and Bento Grid explorer[cite: 9, 10].',
+    image: '/parallax.png',
+    technologies: ['React 18', 'TypeScript', 'Python', 'NLP', 'Canvas API'],
+    category: 'Research',
+    role: 'Senior Front-end Architect',
+    duration: '2025 - 2026',
+    liveUrl: 'https://parallax-thread.vercel.app',
+    githubUrl: 'https://github.com/Sandeep010-hub/archive-insight',
+    features: ['Semantic Layer Analysis [cite: 6]', 'Particle Physics UI [cite: 9]', 'Originality Scoring [cite: 11]'],
+    challenges: ['Idea-level duplication detection [cite: 4]', 'Canvas performance'],
+    results: ['Transparent audit experience [cite: 5]', 'Explainable AI scoring [cite: 5]'],
+    featured: true,
+    tags: ['Data Viz', 'Academic Tech', 'Semantic UI']
+  },
+  {
+    id: '64framez',
+    title: '64Framez Portfolio',
+    description: 'High-performance creative agency presence with 70% load speed improvement[cite: 124].',
+    longDescription: 'Architected a visually striking presence for a media agency using lazy loading and Intersection Observer API to maximize engagement[cite: 124].',
+    image: '/64Framez.png',
+    technologies: ['Next.js', 'Tailwind CSS', 'Intersection Observer'],
+    category: 'Client Project',
+    role: 'Lead Front-end Architect',
+    duration: '2024',
+    liveUrl: 'https://64frames.com',
+    features: ['Lazy loading optimization [cite: 124]', 'Intersection Observer animations [cite: 124]', '95+ Lighthouse score [cite: 124]'],
+    challenges: ['High-res media balancing'],
+    results: ['70% load speed improvement [cite: 124]', 'Premium brand reputation'],
+    featured: true,
+    tags: ['Creative Agency', 'Performance', 'SEO']
+  },
+  {
+    id: 'webortex-official',
+    title: 'Webortex Official',
+    description: 'Corporate sales engine driving a 200% increase in inbound acquisition[cite: 113, 164].',
+    longDescription: 'The primary digital presence for Webortex, built with a laser focus on technical SEO and inbound lead generation[cite: 113, 164].',
+    image: '/webortex.png',
+    technologies: ['Next.js', 'Node.js', 'Headless CMS'],
     category: 'Full Stack',
-    role: 'Lead Developer',
-    duration: 'Ongoing',
-    githubUrl: 'https://github.com/yourusername/job-bridge',
+    role: 'Lead Product Engineer',
+    duration: '2024 - 2025',
+    liveUrl: 'https://webortex.com',
+    features: ['Technical SEO architecture [cite: 113, 164]', 'SSR performance', 'Headless CMS'],
+    challenges: ['Scaling inbound conversion'],
+    results: ['200% acquisition growth [cite: 113, 164]', 'Market leader positioning'],
+    featured: true,
+    tags: ['SaaS', 'Marketing Tech', 'Next.js']
+  }
+];
+
+export const explorer_data: Project[] = [
+  {
+    id: 'aeo-research',
+    title: 'AEO & GEO Search Engine Optimization',
+    description: 'Pioneered contextual Answer Engine Optimization (AEO) strategies shifting traditional paradigms.',
+    longDescription: 'Conducted rigorous research into Generative Engine Optimization, structuring a 10-chapter architectural guide on how large language models parse semantic web components. This research dictates how AI-native sites construct their unstructured data.',
+    image: '/webortex.png',
+    technologies: ['SEO/GEO Analysis', 'Semantic HTML', 'JSON-LD', 'Next.js'],
+    category: 'Research',
+    role: 'Thought Leader & Architect',
+    duration: '2025',
+    liveUrl: 'https://webortex.com',
+    githubUrl: '',
     features: [
-      'Student project portfolio creation and management',
-      'AI-powered career guidance and recommendations',
-      'Project timeline tracking and progress visualization',
-      'Employer-student matching system',
-      'Skill assessment and learning path recommendations'
+      'Data modeling for Knowledge Graph injection',
+      'Structuring multi-step agentic SEO tasks'
     ],
     challenges: [
-      'Integrating AI services for career guidance',
-      'Designing scalable user authentication system',
-      'Creating intuitive project management interface'
+      'Adapting to constant algorithmic shifts in OpenAI and Gemini scraping methodologies'
     ],
     results: [
-      'Helped 100+ students create professional portfolios',
-      'Improved student-employer matching efficiency',
-      'Enhanced career readiness for participants'
+      'Positioned Webortex at the absolute forefront of AI-powered search methodologies',
+      'Successfully indexed high-priority client pages into top Perplexity and Gemini responses'
     ],
     featured: true,
-    tags: ['Next.js', 'TypeScript', 'AI', 'Career Platform', 'Education']
+    tags: ['AEO', 'Semantic Web', 'Research']
+  },
+  {
+    id: 'linkedin-thought-leadership',
+    title: 'System Orchestration Discourse',
+    description: 'Driving industry debates on Microservices, Agentic workflows, and Notebook-to-Production transitions.',
+    longDescription: 'Curating a highly engaged digital community analyzing the transition of AI from Jupyter Notebook prototypes to scalable FastAPI production environments, emphasizing orchestration over raw coding.',
+    image: '/insideJournal.png',
+    technologies: ['Technical Writing', 'DevOps Advocacy', 'System Design'],
+    category: 'Research',
+    role: 'Thought Leader',
+    duration: 'Ongoing',
+    liveUrl: 'https://www.linkedin.com/in/yaswanth-sai-sandeep-kalagatla-655416243/',
+    githubUrl: '',
+    features: [
+      'Analyzing and debating deterministic vs probabilistic system architectures',
+      'Publishing The Agent Architect analyses on OpenAI paradigms'
+    ],
+    challenges: [
+      'Bridging the uncomfortable gap between data science prototypes and engineering realities'
+    ],
+    results: [
+      'Cultivated an engaged audience, shifting perspectives toward production-grade engineering',
+      'Defined strict frameworks distinguishing true AI Agents from standard software'
+    ],
+    featured: true,
+    tags: ['Thought Leadership', 'Cloud Architecture', 'System Design']
   }
-]
+];
 
-export const featuredProjects = projects.filter(project => project.featured)
-export const allProjects = projects
+export const projects: Project[] = [...software_data, ...explorer_data];
+
+export const featuredProjects = projects.filter(project => project.featured);
+export const allProjects = projects;
 
 // Get unique tags for filtering
-export const allTags = Array.from(new Set(projects.flatMap(project => project.tags))) 
+export const allTags = Array.from(new Set(projects.flatMap(project => project.tags)));

@@ -1,15 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+@config "../tailwind.config.ts";
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
+    --background: 98.5% 0.005 60;
+    --foreground: 25% 0.02 250;
+    --card: 98.5% 0.005 60;
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
@@ -30,10 +26,10 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --background: 15% 0.01 250;
+    --foreground: 92% 0.01 250;
+    --card: 15% 0.01 250;
+    --card-foreground: 92% 0.01 250;
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
     --primary: 142.1 70.6% 45.3%;
@@ -65,8 +61,30 @@
     @apply border-gray-200 dark:border-gray-800;
   }
   body {
-    @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100;
+    @apply bg-white dark:bg-[oklch(15%_0.01_250)] text-[oklch(25%_0.02_250)] dark:text-[oklch(92%_0.01_250)];
     font-feature-settings: "rlig" 1, "calt" 1;
+    background-color: oklch(var(--background));
+    color: oklch(var(--foreground));
+  }
+  .dark body {
+    letter-spacing: 0.03em;
+    font-weight: 300;
+  }
+}
+
+::view-transition-old(root) {
+  animation: none;
+}
+::view-transition-new(root) {
+  animation: circle-expand 0.8s ease-in-out forwards;
+}
+
+@keyframes circle-expand {
+  0% {
+    clip-path: circle(0px at var(--x, 50%) var(--y, 50%));
+  }
+  100% {
+    clip-path: circle(150vw at var(--x, 50%) var(--y, 50%));
   }
 }
 

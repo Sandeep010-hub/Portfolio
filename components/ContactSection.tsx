@@ -1,243 +1,270 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
+import { Mail, Phone, MapPin, Send, CheckCircle2 } from 'lucide-react'
+import { useProfileStore } from '../store/useProfileStore'
 
 const ContactSection = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  })
+  const mode = useProfileStore((state) => state.mode)
+  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' })
   const [focusedField, setFocusedField] = useState<string | null>(null)
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle')
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    })
+    setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-  }
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.5
-      }
-    }
+    setStatus('submitting')
+    // Simulate API call
+    setTimeout(() => {
+      setStatus('success')
+      setFormData({ name: '', email: '', subject: '', message: '' })
+      setTimeout(() => setStatus('idle'), 3000)
+    }, 1500)
   }
 
   const contactDetails = [
-    { label: 'Email', value: 'saisandeepkalagatla@gmail.com', href: 'mailto:saisandeepkalagatla@gmail.com', icon: (
-      <svg className="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-    ) },
-    { label: 'Phone', value: '+91 8688221981', href: 'tel:+918688221981', icon: (
-      <svg className="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h2.28a2 2 0 011.94 1.515l.3 1.2a2 2 0 01-.45 1.95l-1.1 1.1a16.001 16.001 0 006.36 6.36l1.1-1.1a2 2 0 011.95-.45l1.2.3A2 2 0 0121 16.72V19a2 2 0 01-2 2h-1C7.163 21 3 16.837 3 12V5z" /></svg>
-    ) },
+    { label: 'Secure Transmission', value: 'saisandeepkalagatla@gmail.com', href: 'mailto:saisandeepkalagatla@gmail.com', icon: Mail },
+    { label: 'Direct Line', value: '+91 8688221981', href: 'tel:+918688221981', icon: Phone },
+    { label: 'Base Operations', value: 'Remote / Global', href: '#', icon: MapPin },
   ]
 
+  const explorerDetails = [
+    { label: 'Email Inquiries', value: 'saisandeepkalagatla@gmail.com', href: 'mailto:saisandeepkalagatla@gmail.com', icon: Mail },
+    { label: 'Phone Consult', value: '+91 8688221981', href: 'tel:+918688221981', icon: Phone },
+    { label: 'Availability', value: 'Open for Engagements', href: '#', icon: MapPin },
+  ]
+
+  const activeDetails = mode === 'software' ? contactDetails : explorerDetails
+
   return (
-    <section id="contact" className="py-16 bg-gray-50 dark:bg-gray-900 scroll-mt-20">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Get In Touch
-          </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Ready to start a project or just want to chat? I'd love to hear from you!
-          </p>
-        </motion.div>
+    <section id="contact" className="py-24 relative overflow-hidden scroll-mt-20">
+      <div className="container-max px-4 sm:px-6 lg:px-8 mx-auto relative z-10">
+        
+        {/* Header */}
+        <div className="mb-16 max-w-2xl">
+          {mode === 'software' ? (
+            <>
+              <motion.h2 layout="position" className="text-4xl font-bold font-sans text-gray-900 dark:text-gray-100 tracking-tight">Initialize Connection</motion.h2>
+              <motion.p layout="position" className="text-gray-500 dark:text-gray-400 mt-2 font-mono text-sm">
+                [awaiting secure handshake protocols]
+              </motion.p>
+            </>
+          ) : (
+            <>
+              <motion.h2 layout="position" className="text-4xl font-bold font-serif text-[#4a3f35] dark:text-[#e8dccb] tracking-tight">Start a Conversation</motion.h2>
+              <motion.p layout="position" className="text-[#8c7a6b] dark:text-[#a89c8f] mt-3 font-serif text-lg italic">
+                Whether you need a strategic partner or an architectural consultation, I'm ready to listen.
+              </motion.p>
+            </>
+          )}
+        </div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          className="max-w-4xl mx-auto"
-        >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Information */}
-            <motion.div variants={itemVariants} className="space-y-8">
-              <div>
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                  Let's Connect
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-8">
-                  I'm always open to discussing new opportunities, interesting projects, 
-                  or just having a friendly chat about technology and development.
-                </p>
-              </div>
-
-              {/* Contact Methods */}
-              <div className="space-y-6">
-                {contactDetails.map((contact, index) => (
-                  <motion.div
-                    key={index}
-                    whileHover={{ x: 5 }}
-                    className="flex items-center space-x-4 p-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
-                  >
-                    <div className="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-full">
-                      {contact.icon}
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 dark:text-white">{contact.label}</h4>
-                      <a href={contact.href} className="text-gray-600 dark:text-gray-300">{contact.value}</a>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Contact Form */}
-            <motion.div variants={itemVariants}>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    className="relative"
-                  >
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      onFocus={() => setFocusedField('name')}
-                      onBlur={() => setFocusedField(null)}
-                      placeholder="Your Name"
-                      className={`w-full px-4 py-3 border-2 rounded-lg transition-all duration-300 focus:outline-none ${
-                        focusedField === 'name'
-                          ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20'
-                          : 'border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 hover:border-gray-400 dark:hover:border-gray-500'
-                      }`}
-                      required
-                    />
-                    <motion.div
-                      initial={{ scaleX: 0 }}
-                      animate={{ scaleX: focusedField === 'name' ? 1 : 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-500 origin-left"
-                    />
-                  </motion.div>
-
-                  <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    className="relative"
-                  >
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      onFocus={() => setFocusedField('email')}
-                      onBlur={() => setFocusedField(null)}
-                      placeholder="Your Email"
-                      className={`w-full px-4 py-3 border-2 rounded-lg transition-all duration-300 focus:outline-none ${
-                        focusedField === 'email'
-                          ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20'
-                          : 'border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 hover:border-gray-400 dark:hover:border-gray-500'
-                      }`}
-                      required
-                    />
-                    <motion.div
-                      initial={{ scaleX: 0 }}
-                      animate={{ scaleX: focusedField === 'email' ? 1 : 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-500 origin-left"
-                    />
-                  </motion.div>
-                </div>
-
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  className="relative"
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
+          
+          {/* Left Side: Contact Information Cards */}
+          <div className="lg:col-span-5 space-y-6">
+            {activeDetails.map((contact, index) => {
+              const Icon = contact.icon
+              return (
+                <motion.a
+                  href={contact.href}
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  className={`group flex items-center p-6 rounded-2xl border transition-all duration-300 ${
+                    mode === 'software'
+                      ? 'border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-[#0a0f18]/50 backdrop-blur-md hover:border-blue-500/50 hover:bg-white dark:hover:bg-[#0f172a]'
+                      : 'border-[#e6ded8] dark:border-[#3a322b] bg-[#fcfbf9]/60 dark:bg-[#2a241f]/60 backdrop-blur-md hover:border-[#d4c8bf] dark:hover:border-[#4a3f35] hover:shadow-xl'
+                  }`}
                 >
+                  <div className={`p-4 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 flex-shrink-0 ${
+                    mode === 'software'
+                      ? 'bg-gray-100 dark:bg-gray-800/80 text-gray-900 dark:text-gray-300 group-hover:text-blue-500 group-hover:bg-blue-50 dark:group-hover:bg-blue-900/20'
+                      : 'bg-[#f4efe9] dark:bg-[#383029] text-[#7a6b5d] dark:text-[#d1c8c0]'
+                  }`}>
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <div className="ml-4 sm:ml-6 min-w-0 flex-1 overflow-hidden">
+                    <h4 className={`text-sm font-semibold tracking-wide ${
+                      mode === 'software' ? 'font-mono text-gray-500 dark:text-gray-400 uppercase' : 'font-serif text-[#a89c8f] dark:text-[#8c7a6b]'
+                    }`}>
+                      {contact.label}
+                    </h4>
+                    <p className={`mt-1 font-medium text-base sm:text-lg break-all sm:break-normal ${
+                      mode === 'software' ? 'text-gray-900 dark:text-gray-100' : 'text-[#4a3f35] dark:text-[#e8dccb]'
+                    }`}>
+                      {contact.value}
+                    </p>
+                  </div>
+                </motion.a>
+              )
+            })}
+          </div>
+
+          {/* Right Side: Contact Form */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className={`lg:col-span-7 p-8 md:p-10 rounded-3xl border relative overflow-hidden ${
+              mode === 'software'
+                ? 'bg-white dark:bg-[#0b1120] border-gray-200 dark:border-gray-800 shadow-2xl shadow-blue-900/5'
+                : 'bg-[#fcfbf9] dark:bg-[#25201b] border-[#e6ded8] dark:border-[#352c26] shadow-xl'
+            }`}
+          >
+            {/* Soft decorative glow background */}
+            {mode === 'software' && (
+              <div className="absolute -top-40 -right-40 w-96 h-96 bg-blue-500/10 dark:bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                {/* Name */}
+                <div className="relative group">
+                  <label className={`block text-xs font-semibold mb-2 ml-1 ${
+                    mode === 'software' ? 'font-mono uppercase text-gray-500 dark:text-gray-400' : 'font-serif text-[#8c7a6b]'
+                  }`}>
+                    Identity [Name]
+                  </label>
                   <input
                     type="text"
-                    name="subject"
-                    value={formData.subject}
+                    name="name"
+                    value={formData.name}
                     onChange={handleInputChange}
-                    onFocus={() => setFocusedField('subject')}
+                    onFocus={() => setFocusedField('name')}
                     onBlur={() => setFocusedField(null)}
-                    placeholder="Subject"
-                    className={`w-full px-4 py-3 border-2 rounded-lg transition-all duration-300 focus:outline-none ${
-                      focusedField === 'subject'
-                        ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20'
-                        : 'border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 hover:border-gray-400 dark:hover:border-gray-500'
-                    }`}
                     required
+                    className={`w-full px-5 py-4 rounded-xl border transition-all duration-300 focus:outline-none ${
+                      mode === 'software'
+                        ? 'bg-gray-50 dark:bg-gray-900/50 border-gray-200 dark:border-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:border-blue-500 focus:bg-white dark:focus:bg-[#0f172a]'
+                        : 'bg-white dark:bg-[#2e2621] border-[#e6ded8] dark:border-[#4a3f35] text-[#4a3f35] dark:text-[#e8dccb] placeholder-[#a89c8f] focus:border-[#a89c8f]'
+                    }`}
+                    placeholder={mode === 'software' ? 'sys.admin_01' : 'Jane Doe'}
                   />
-                  <motion.div
-                    initial={{ scaleX: 0 }}
-                    animate={{ scaleX: focusedField === 'subject' ? 1 : 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-500 origin-left"
-                  />
-                </motion.div>
+                </div>
 
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  className="relative"
-                >
-                  <textarea
-                    name="message"
-                    value={formData.message}
+                {/* Email */}
+                <div className="relative group">
+                  <label className={`block text-xs font-semibold mb-2 ml-1 ${
+                    mode === 'software' ? 'font-mono uppercase text-gray-500 dark:text-gray-400' : 'font-serif text-[#8c7a6b]'
+                  }`}>
+                    Return Address [Email]
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
                     onChange={handleInputChange}
-                    onFocus={() => setFocusedField('message')}
+                    onFocus={() => setFocusedField('email')}
                     onBlur={() => setFocusedField(null)}
-                    placeholder="Your Message"
-                    rows={6}
-                    className={`w-full px-4 py-3 border-2 rounded-lg transition-all duration-300 focus:outline-none resize-none ${
-                      focusedField === 'message'
-                        ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20'
-                        : 'border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 hover:border-gray-400 dark:hover:border-gray-500'
-                    }`}
                     required
+                    className={`w-full px-5 py-4 rounded-xl border transition-all duration-300 focus:outline-none ${
+                      mode === 'software'
+                        ? 'bg-gray-50 dark:bg-gray-900/50 border-gray-200 dark:border-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:border-blue-500 focus:bg-white dark:focus:bg-[#0f172a]'
+                        : 'bg-white dark:bg-[#2e2621] border-[#e6ded8] dark:border-[#4a3f35] text-[#4a3f35] dark:text-[#e8dccb] placeholder-[#a89c8f] focus:border-[#a89c8f]'
+                    }`}
+                    placeholder={mode === 'software' ? 'router@domain.com' : 'jane@example.com'}
                   />
-                  <motion.div
-                    initial={{ scaleX: 0 }}
-                    animate={{ scaleX: focusedField === 'message' ? 1 : 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-500 origin-left"
-                  />
-                </motion.div>
+                </div>
+              </div>
 
-                <motion.button
-                  type="submit"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
-                >
-                  Send Message
-                </motion.button>
-              </form>
-            </motion.div>
-          </div>
-        </motion.div>
+              {/* Subject */}
+              <div className="relative group">
+                <label className={`block text-xs font-semibold mb-2 ml-1 ${
+                  mode === 'software' ? 'font-mono uppercase text-gray-500 dark:text-gray-400' : 'font-serif text-[#8c7a6b]'
+                }`}>
+                  Packet Header [Subject]
+                </label>
+                <input
+                  type="text"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleInputChange}
+                  onFocus={() => setFocusedField('subject')}
+                  onBlur={() => setFocusedField(null)}
+                  required
+                  className={`w-full px-5 py-4 rounded-xl border transition-all duration-300 focus:outline-none ${
+                    mode === 'software'
+                      ? 'bg-gray-50 dark:bg-gray-900/50 border-gray-200 dark:border-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:border-blue-500 focus:bg-white dark:focus:bg-[#0f172a]'
+                      : 'bg-white dark:bg-[#2e2621] border-[#e6ded8] dark:border-[#4a3f35] text-[#4a3f35] dark:text-[#e8dccb] placeholder-[#a89c8f] focus:border-[#a89c8f]'
+                  }`}
+                  placeholder={mode === 'software' ? 'Architecture Consultation Request' : 'Collaboration Inquiry'}
+                />
+              </div>
+
+              {/* Message */}
+              <div className="relative group">
+                <label className={`block text-xs font-semibold mb-2 ml-1 ${
+                  mode === 'software' ? 'font-mono uppercase text-gray-500 dark:text-gray-400' : 'font-serif text-[#8c7a6b]'
+                }`}>
+                  Payload [Message]
+                </label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  onFocus={() => setFocusedField('message')}
+                  onBlur={() => setFocusedField(null)}
+                  required
+                  rows={5}
+                  className={`w-full px-5 py-4 rounded-xl border transition-all duration-300 focus:outline-none resize-none ${
+                    mode === 'software'
+                      ? 'bg-gray-50 dark:bg-gray-900/50 border-gray-200 dark:border-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:border-blue-500 focus:bg-white dark:focus:bg-[#0f172a]'
+                      : 'bg-white dark:bg-[#2e2621] border-[#e6ded8] dark:border-[#4a3f35] text-[#4a3f35] dark:text-[#e8dccb] placeholder-[#a89c8f] focus:border-[#a89c8f]'
+                  }`}
+                  placeholder={mode === 'software' ? 'Entering secure payload parameters...' : 'Briefly describe your objectives...'}
+                />
+              </div>
+
+              {/* Submit Button */}
+              <button
+                type="submit"
+                disabled={status === 'submitting' || status === 'success'}
+                className={`w-full flex items-center justify-center gap-3 py-4 px-8 rounded-xl font-bold transition-all duration-300 disabled:opacity-80 disabled:cursor-not-allowed ${
+                  mode === 'software'
+                    ? status === 'success'
+                      ? 'bg-emerald-500 text-white'
+                      : 'bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-blue-600 dark:hover:bg-blue-500 hover:text-white dark:hover:text-white hover:scale-[1.01] hover:shadow-xl'
+                    : status === 'success'
+                      ? 'bg-green-600 text-white'
+                      : 'bg-[#4a3f35] dark:bg-[#e8dccb] text-[#fdfbf7] dark:text-[#26201b] hover:bg-[#352c26] dark:hover:bg-white hover:shadow-lg'
+                }`}
+              >
+                <AnimatePresence mode="popLayout">
+                  {status === 'idle' && (
+                    <motion.div key="idle" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="flex items-center gap-2">
+                      <Send className="w-5 h-5" />
+                      <span>{mode === 'software' ? 'Execute Transmission' : 'Send Message'}</span>
+                    </motion.div>
+                  )}
+                  {status === 'submitting' && (
+                    <motion.div key="submitting" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="flex items-center gap-2">
+                      <motion.div animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 1, ease: 'linear' }} className="w-5 h-5 border-2 border-current border-t-transparent rounded-full" />
+                      <span>{mode === 'software' ? 'Encrypting & Routing...' : 'Sending...'}</span>
+                    </motion.div>
+                  )}
+                  {status === 'success' && (
+                    <motion.div key="success" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} className="flex items-center gap-2">
+                      <CheckCircle2 className="w-5 h-5" />
+                      <span>{mode === 'software' ? 'Transmission Verified' : 'Message Delivered'}</span>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </button>
+            </form>
+          </motion.div>
+        </div>
       </div>
     </section>
   )
 }
 
-export default ContactSection 
+export default ContactSection
