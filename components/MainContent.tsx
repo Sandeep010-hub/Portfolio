@@ -38,7 +38,6 @@ export default function MainContent() {
           >
             <LinkedInInsights />
             <ResearchExplorer />
-            <TimelineSection />
           </motion.div>
         )}
       </AnimatePresence>

@@ -43,7 +43,7 @@ const ContactSection = () => {
   return (
     <section id="contact" className="py-24 relative overflow-hidden scroll-mt-20">
       <div className="container-max px-4 sm:px-6 lg:px-8 mx-auto relative z-10">
-        
+
         {/* Header */}
         <div className="mb-16 max-w-2xl">
           {mode === 'software' ? (
@@ -64,7 +64,7 @@ const ContactSection = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
-          
+
           {/* Left Side: Contact Information Cards */}
           <div className="lg:col-span-5 space-y-6">
             {activeDetails.map((contact, index) => {
@@ -77,28 +77,24 @@ const ContactSection = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
-                  className={`group flex items-center p-6 rounded-2xl border transition-all duration-300 ${
-                    mode === 'software'
-                      ? 'border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-[#0a0f18]/50 backdrop-blur-md hover:border-blue-500/50 hover:bg-white dark:hover:bg-[#0f172a]'
-                      : 'border-[#e6ded8] dark:border-[#3a322b] bg-[#fcfbf9]/60 dark:bg-[#2a241f]/60 backdrop-blur-md hover:border-[#d4c8bf] dark:hover:border-[#4a3f35] hover:shadow-xl'
-                  }`}
+                  className={`group flex items-center p-6 rounded-2xl border transition-all duration-300 ${mode === 'software'
+                    ? 'border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-[#0a0f18]/50 backdrop-blur-md hover:border-blue-500/50 hover:bg-white dark:hover:bg-[#0f172a]'
+                    : 'border-[#e6ded8] dark:border-[#3a322b] bg-[#fcfbf9]/60 dark:bg-[#2a241f]/60 backdrop-blur-md hover:border-[#d4c8bf] dark:hover:border-[#4a3f35] hover:shadow-xl'
+                    }`}
                 >
-                  <div className={`p-4 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 flex-shrink-0 ${
-                    mode === 'software'
-                      ? 'bg-gray-100 dark:bg-gray-800/80 text-gray-900 dark:text-gray-300 group-hover:text-blue-500 group-hover:bg-blue-50 dark:group-hover:bg-blue-900/20'
-                      : 'bg-[#f4efe9] dark:bg-[#383029] text-[#7a6b5d] dark:text-[#d1c8c0]'
-                  }`}>
+                  <div className={`p-4 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 flex-shrink-0 ${mode === 'software'
+                    ? 'bg-gray-100 dark:bg-gray-800/80 text-gray-900 dark:text-gray-300 group-hover:text-blue-500 group-hover:bg-blue-50 dark:group-hover:bg-blue-900/20'
+                    : 'bg-[#f4efe9] dark:bg-[#383029] text-[#7a6b5d] dark:text-[#d1c8c0]'
+                    }`}>
                     <Icon className="w-6 h-6" />
                   </div>
                   <div className="ml-4 sm:ml-6 min-w-0 flex-1 overflow-hidden">
-                    <h4 className={`text-sm font-semibold tracking-wide ${
-                      mode === 'software' ? 'font-mono text-gray-500 dark:text-gray-400 uppercase' : 'font-serif text-[#a89c8f] dark:text-[#8c7a6b]'
-                    }`}>
+                    <h4 className={`text-sm font-semibold tracking-wide ${mode === 'software' ? 'font-mono text-gray-500 dark:text-gray-400 uppercase' : 'font-serif text-[#a89c8f] dark:text-[#8c7a6b]'
+                      }`}>
                       {contact.label}
                     </h4>
-                    <p className={`mt-1 font-medium text-base sm:text-lg break-all sm:break-normal ${
-                      mode === 'software' ? 'text-gray-900 dark:text-gray-100' : 'text-[#4a3f35] dark:text-[#e8dccb]'
-                    }`}>
+                    <p className={`mt-1 font-medium text-base sm:text-lg break-all sm:break-normal ${mode === 'software' ? 'text-gray-900 dark:text-gray-100' : 'text-[#4a3f35] dark:text-[#e8dccb]'
+                      }`}>
                       {contact.value}
                     </p>
                   </div>
@@ -113,11 +109,10 @@ const ContactSection = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className={`lg:col-span-7 p-8 md:p-10 rounded-3xl border relative overflow-hidden ${
-              mode === 'software'
-                ? 'bg-white dark:bg-[#0b1120] border-gray-200 dark:border-gray-800 shadow-2xl shadow-blue-900/5'
-                : 'bg-[#fcfbf9] dark:bg-[#25201b] border-[#e6ded8] dark:border-[#352c26] shadow-xl'
-            }`}
+            className={`lg:col-span-7 p-8 md:p-10 rounded-3xl border relative overflow-hidden ${mode === 'software'
+              ? 'bg-white dark:bg-[#0b1120] border-gray-200 dark:border-gray-800 shadow-2xl shadow-blue-900/5'
+              : 'bg-[#fcfbf9] dark:bg-[#25201b] border-[#e6ded8] dark:border-[#352c26] shadow-xl'
+              }`}
           >
             {/* Soft decorative glow background */}
             {mode === 'software' && (
@@ -126,12 +121,11 @@ const ContactSection = () => {
 
             <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                
+
                 {/* Name */}
                 <div className="relative group">
-                  <label className={`block text-xs font-semibold mb-2 ml-1 ${
-                    mode === 'software' ? 'font-mono uppercase text-gray-500 dark:text-gray-400' : 'font-serif text-[#8c7a6b]'
-                  }`}>
+                  <label className={`block text-xs font-semibold mb-2 ml-1 ${mode === 'software' ? 'font-mono uppercase text-gray-500 dark:text-gray-400' : 'font-serif text-[#8c7a6b]'
+                    }`}>
                     Identity [Name]
                   </label>
                   <input
@@ -142,20 +136,18 @@ const ContactSection = () => {
                     onFocus={() => setFocusedField('name')}
                     onBlur={() => setFocusedField(null)}
                     required
-                    className={`w-full px-5 py-4 rounded-xl border transition-all duration-300 focus:outline-none ${
-                      mode === 'software'
-                        ? 'bg-gray-50 dark:bg-gray-900/50 border-gray-200 dark:border-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:border-blue-500 focus:bg-white dark:focus:bg-[#0f172a]'
-                        : 'bg-white dark:bg-[#2e2621] border-[#e6ded8] dark:border-[#4a3f35] text-[#4a3f35] dark:text-[#e8dccb] placeholder-[#a89c8f] focus:border-[#a89c8f]'
-                    }`}
+                    className={`w-full px-5 py-4 rounded-xl border transition-all duration-300 focus:outline-none ${mode === 'software'
+                      ? 'bg-gray-50 dark:bg-gray-900/50 border-gray-200 dark:border-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-400 hover:border-blue-400 dark:hover:border-blue-500/50 focus:border-blue-500 focus:bg-white dark:focus:bg-[#0f172a] focus:ring-4 focus:ring-blue-500/10'
+                      : 'bg-white dark:bg-[#2e2621] border-[#e6ded8] dark:border-[#4a3f35] text-[#4a3f35] dark:text-[#e8dccb] placeholder-[#a89c8f] hover:border-[#8c7a6b] dark:hover:border-[#a89c8f] focus:border-[#4a3f35] dark:focus:border-[#e8dccb] focus:ring-4 focus:ring-[#8c7a6b]/5'
+                      }`}
                     placeholder={mode === 'software' ? 'sys.admin_01' : 'Jane Doe'}
                   />
                 </div>
 
                 {/* Email */}
                 <div className="relative group">
-                  <label className={`block text-xs font-semibold mb-2 ml-1 ${
-                    mode === 'software' ? 'font-mono uppercase text-gray-500 dark:text-gray-400' : 'font-serif text-[#8c7a6b]'
-                  }`}>
+                  <label className={`block text-xs font-semibold mb-2 ml-1 ${mode === 'software' ? 'font-mono uppercase text-gray-500 dark:text-gray-400' : 'font-serif text-[#8c7a6b]'
+                    }`}>
                     Return Address [Email]
                   </label>
                   <input
@@ -166,11 +158,10 @@ const ContactSection = () => {
                     onFocus={() => setFocusedField('email')}
                     onBlur={() => setFocusedField(null)}
                     required
-                    className={`w-full px-5 py-4 rounded-xl border transition-all duration-300 focus:outline-none ${
-                      mode === 'software'
-                        ? 'bg-gray-50 dark:bg-gray-900/50 border-gray-200 dark:border-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:border-blue-500 focus:bg-white dark:focus:bg-[#0f172a]'
-                        : 'bg-white dark:bg-[#2e2621] border-[#e6ded8] dark:border-[#4a3f35] text-[#4a3f35] dark:text-[#e8dccb] placeholder-[#a89c8f] focus:border-[#a89c8f]'
-                    }`}
+                    className={`w-full px-5 py-4 rounded-xl border transition-all duration-300 focus:outline-none ${mode === 'software'
+                      ? 'bg-gray-50 dark:bg-gray-900/50 border-gray-200 dark:border-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-400 hover:border-blue-400 dark:hover:border-blue-500/50 focus:border-blue-500 focus:bg-white dark:focus:bg-[#0f172a] focus:ring-4 focus:ring-blue-500/10'
+                      : 'bg-white dark:bg-[#2e2621] border-[#e6ded8] dark:border-[#4a3f35] text-[#4a3f35] dark:text-[#e8dccb] placeholder-[#a89c8f] hover:border-[#8c7a6b] dark:hover:border-[#a89c8f] focus:border-[#4a3f35] dark:focus:border-[#e8dccb] focus:ring-4 focus:ring-[#8c7a6b]/5'
+                      }`}
                     placeholder={mode === 'software' ? 'router@domain.com' : 'jane@example.com'}
                   />
                 </div>
@@ -178,9 +169,8 @@ const ContactSection = () => {
 
               {/* Subject */}
               <div className="relative group">
-                <label className={`block text-xs font-semibold mb-2 ml-1 ${
-                  mode === 'software' ? 'font-mono uppercase text-gray-500 dark:text-gray-400' : 'font-serif text-[#8c7a6b]'
-                }`}>
+                <label className={`block text-xs font-semibold mb-2 ml-1 ${mode === 'software' ? 'font-mono uppercase text-gray-500 dark:text-gray-400' : 'font-serif text-[#8c7a6b]'
+                  }`}>
                   Packet Header [Subject]
                 </label>
                 <input
@@ -191,20 +181,18 @@ const ContactSection = () => {
                   onFocus={() => setFocusedField('subject')}
                   onBlur={() => setFocusedField(null)}
                   required
-                  className={`w-full px-5 py-4 rounded-xl border transition-all duration-300 focus:outline-none ${
-                    mode === 'software'
-                      ? 'bg-gray-50 dark:bg-gray-900/50 border-gray-200 dark:border-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:border-blue-500 focus:bg-white dark:focus:bg-[#0f172a]'
-                      : 'bg-white dark:bg-[#2e2621] border-[#e6ded8] dark:border-[#4a3f35] text-[#4a3f35] dark:text-[#e8dccb] placeholder-[#a89c8f] focus:border-[#a89c8f]'
-                  }`}
+                  className={`w-full px-5 py-4 rounded-xl border transition-all duration-300 focus:outline-none ${mode === 'software'
+                    ? 'bg-gray-50 dark:bg-gray-900/50 border-gray-200 dark:border-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-400 hover:border-blue-400 dark:hover:border-blue-500/50 focus:border-blue-500 focus:bg-white dark:focus:bg-[#0f172a] focus:ring-4 focus:ring-blue-500/10'
+                    : 'bg-white dark:bg-[#2e2621] border-[#e6ded8] dark:border-[#4a3f35] text-[#4a3f35] dark:text-[#e8dccb] placeholder-[#a89c8f] hover:border-[#8c7a6b] dark:hover:border-[#a89c8f] focus:border-[#4a3f35] dark:focus:border-[#e8dccb] focus:ring-4 focus:ring-[#8c7a6b]/5'
+                    }`}
                   placeholder={mode === 'software' ? 'Architecture Consultation Request' : 'Collaboration Inquiry'}
                 />
               </div>
 
               {/* Message */}
               <div className="relative group">
-                <label className={`block text-xs font-semibold mb-2 ml-1 ${
-                  mode === 'software' ? 'font-mono uppercase text-gray-500 dark:text-gray-400' : 'font-serif text-[#8c7a6b]'
-                }`}>
+                <label className={`block text-xs font-semibold mb-2 ml-1 ${mode === 'software' ? 'font-mono uppercase text-gray-500 dark:text-gray-400' : 'font-serif text-[#8c7a6b]'
+                  }`}>
                   Payload [Message]
                 </label>
                 <textarea
@@ -215,11 +203,10 @@ const ContactSection = () => {
                   onBlur={() => setFocusedField(null)}
                   required
                   rows={5}
-                  className={`w-full px-5 py-4 rounded-xl border transition-all duration-300 focus:outline-none resize-none ${
-                    mode === 'software'
-                      ? 'bg-gray-50 dark:bg-gray-900/50 border-gray-200 dark:border-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:border-blue-500 focus:bg-white dark:focus:bg-[#0f172a]'
-                      : 'bg-white dark:bg-[#2e2621] border-[#e6ded8] dark:border-[#4a3f35] text-[#4a3f35] dark:text-[#e8dccb] placeholder-[#a89c8f] focus:border-[#a89c8f]'
-                  }`}
+                  className={`w-full px-5 py-4 rounded-xl border transition-all duration-300 focus:outline-none resize-none ${mode === 'software'
+                    ? 'bg-gray-50 dark:bg-gray-900/50 border-gray-200 dark:border-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-400 hover:border-blue-400 dark:hover:border-blue-500/50 focus:border-blue-500 focus:bg-white dark:focus:bg-[#0f172a] focus:ring-4 focus:ring-blue-500/10'
+                    : 'bg-white dark:bg-[#2e2621] border-[#e6ded8] dark:border-[#4a3f35] text-[#4a3f35] dark:text-[#e8dccb] placeholder-[#a89c8f] hover:border-[#8c7a6b] dark:hover:border-[#a89c8f] focus:border-[#4a3f35] dark:focus:border-[#e8dccb] focus:ring-4 focus:ring-[#8c7a6b]/5'
+                    }`}
                   placeholder={mode === 'software' ? 'Entering secure payload parameters...' : 'Briefly describe your objectives...'}
                 />
               </div>
@@ -228,15 +215,14 @@ const ContactSection = () => {
               <button
                 type="submit"
                 disabled={status === 'submitting' || status === 'success'}
-                className={`w-full flex items-center justify-center gap-3 py-4 px-8 rounded-xl font-bold transition-all duration-300 disabled:opacity-80 disabled:cursor-not-allowed ${
-                  mode === 'software'
-                    ? status === 'success'
-                      ? 'bg-emerald-500 text-white'
-                      : 'bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-blue-600 dark:hover:bg-blue-500 hover:text-white dark:hover:text-white hover:scale-[1.01] hover:shadow-xl'
-                    : status === 'success'
-                      ? 'bg-green-600 text-white'
-                      : 'bg-[#4a3f35] dark:bg-[#e8dccb] text-[#fdfbf7] dark:text-[#26201b] hover:bg-[#352c26] dark:hover:bg-white hover:shadow-lg'
-                }`}
+                className={`w-full flex items-center justify-center gap-3 py-4 px-8 rounded-xl font-bold transition-all duration-300 disabled:opacity-80 disabled:cursor-not-allowed ${mode === 'software'
+                  ? status === 'success'
+                    ? 'bg-emerald-500 text-white'
+                    : 'bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-200 hover:scale-[1.01] hover:shadow-xl hover:shadow-gray-900/10'
+                  : status === 'success'
+                    ? 'bg-green-600 text-white'
+                    : 'bg-[#4a3f35] dark:bg-[#e8dccb] text-[#fdfbf7] dark:text-[#26201b] hover:bg-[#352c26] dark:hover:bg-white hover:shadow-lg'
+                  }`}
               >
                 <AnimatePresence mode="popLayout">
                   {status === 'idle' && (

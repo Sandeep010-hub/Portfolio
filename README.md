@@ -1,88 +1,57 @@
-# Yaswanth Sai Sandeep Kalagatla – Portfolio
+# Yaswanth Sai Sandeep Kalagatla | Strategic Software Architect & AI Engineer
 
-A modern, full-stack developer portfolio built with Next.js App Router, Tailwind CSS, Framer Motion, and TypeScript.
+[![Portfolio](https://img.shields.io/badge/Portfolio-Live-cyan?style=for-the-badge)](https://yaswanths-portfolio.vercel.app)
+[![Tech Stack](https://img.shields.io/badge/Stack-Next.js%2016%20%7C%20FastAPI%20%7C%20AWS-blue?style=for-the-badge)](https://github.com/Sandeep010-hub/Portfolio)
 
-## 🚀 Live Demo
-[Portfolio Website](https://saisandeepkalagatala.vercel.app/)
+## ⚡ The Dual-Identity Architecture
 
-## 👤 About
-Showcasing my work as a Full Stack Developer, Co-Founder & CTO at WEBORTEX. Includes real project case studies, tech stack, timeline, testimonials, and contact info.
+This repository contains the source code for a high-performance, dual-identity portfolio engineered for the 2026 post-search paradigm. It features two distinct operational modes:
 
-## 🛠️ Tech Stack
-- **Frontend:** React.js, Next.js, Tailwind CSS, Framer Motion
-- **Backend:** Node.js, Express.js, Java (Spring Boot)
-- **Databases:** MongoDB, MySQL
-- **DevOps/Cloud:** Netlify, Vercel
-- **Other:** TypeScript, Chart.js, D3.js, REST APIs
+1.  **Software Architect Mode**: A high-density, system-oriented dashboard designed for technical recruiters and engineering leads. Focused on mastery in Next.js, FastAPI, Agentic RAG, and Cloud Infrastructure.
+2.  **AEO Strategist Mode**: An editorial-first thought leadership experience focused on **Answer Engine Optimization (AEO)**, Knowledge Graphs, and the future of LLM-first data discoverability.
 
-## 🌟 Features
-- Modern, responsive UI with dark mode
-- Animated hero, project showcase, tech stack, timeline, and testimonials
-- Real project images and links
-- Contact section with real email and phone
-- Social links and downloadable resume
+## 🛠 Core Internal Engine
 
-## 📂 Folder Structure
+*   **Runtime**: Next.js 16 (Turbopack Enabled)
+*   **Styling**: Tailwind CSS v4 (Alpha Core)
+*   **Animation**: Framer Motion (High-precision transitions)
+*   **State Management**: Zustand (Identity persistence & UI synchronization)
+*   **Deployment**: Vercel Edge Runtime
+
+## 🚀 Key Architectural Features
+
+### 1. Circle Ripple Transition (View Transitions API)
+The "Edison Bulb" at the top isn't just a toggle; it triggers a coordinate-based circular ripple transition using the native View Transitions API to seamlessly swap between the strict "Terminal" aesthetic and the warm "Editorial" layout.
+
+### 2. Dual-Layer Tech Inventory
+*   **System Core**: A bespoke Bento Grid highlighting Tier-1 competencies with micro-animations.
+*   **Full Inventory**: A performance-optimized categorized grid with pill-based interactive filtering.
+
+### 3. AEO Intelligence Layer
+The Explorer mode features a specialized **Research Explorer** and **Unique Value Bento Dashboard** that distill complex AI research into scannable strategic insights.
+
+### 4. Performance Metrics
+*   **Uptime**: Target 99.9% availability.
+*   **Latency**: Optimized for sub-200ms user perception via preemptive caching and Edge-side rendering.
+*   **Accessibility**: Full WCAG compliance with semantic HTML5 hierarchy.
+
+## 📦 Local Handshake (Installation)
+
+```bash
+# Clone the repository
+git clone https://github.com/Sandeep010-hub/Portfolio.git
+
+# Enter the system
+cd Portfolio
+
+# Install handshake protocols
+npm install
+
+# Initialize development transmission
+npm run dev
 ```
-portfolio/
-├── app/
-├── components/
-├── data/
-├── public/
-│   ├── 64Framez.png
-│   ├── insideJournal.png
-│   ├── webortex.png
-│   ├── jobBridge.png
-│   ├── restuarant.jpeg
-│   ├── ems.png
-│   ├── konix.jpeg
-│   └── ...
-├── tailwind.config.ts
-├── tsconfig.json
-├── next.config.js
-└── README.md
-```
-
-## 🖼️ Project Images
-Place your project screenshots in `/public/` with the correct filenames (see above).
-
-## 📄 Resume
-Add your resume PDF or link in the footer and hero section. Example: [Google Drive Resume](https://drive.google.com/file/d/1Y6lnpOE8FmLgeBPCkM6HkYXUHhsFcbpX/view?usp=drive_link)
-
-## 🔗 Social Links
-- [GitHub](https://github.com/Sandeep010-hub)
-- [LinkedIn](https://www.linkedin.com/in/yaswanth-sai-sandeep-kalagatla-655416243/)
-- [Twitter/X](https://x.com/SaiSandeep0241)
-
-## 📝 How to Use
-1. **Install dependencies:**
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
-2. **Run the development server:**
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
-   Open [http://localhost:3000](http://localhost:3000) to view the site.
-3. **Build for production:**
-   ```bash
-   npm run build
-   npm start
-   ```
-
-## 🌐 Deployment
-- **Vercel:** Connect your GitHub repo and deploy instantly.
-- **Netlify:** Use SSR or static export as needed.
-
-## ✨ Customization
-- Update your info in `/data/` and `/components/`
-- Add project images and resume to `/public/`
-- Update social/contact links in the footer and hero section
 
 ---
 
-© 2024 Yaswanth Sai Sandeep Kalagatla 
+**© 2026 Yaswanth Sai Sandeep Kalagatla.** 
+*Architecting the future of Answer Engine discovery.*

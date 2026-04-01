@@ -123,32 +123,6 @@ const HeroSection = () => {
           transition={{ duration: 0.8 }}
           className={`space-y-6 w-full ${mode === 'software' ? 'lg:w-3/5 xl:w-[65%] flex flex-col items-start' : 'max-w-4xl flex flex-col items-center justify-center mx-auto'}`}
         >
-          {/* Badge for Software Mode */}
-          {mode === 'software' ? (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="inline-block"
-            >
-              <div className="inline-flex items-center space-x-2 bg-gray-100 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200 dark:border-gray-700 px-3 py-1.5 rounded-full shadow-sm shadow-blue-900/10">
-                <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
-                <span className="text-xs font-mono font-bold text-gray-800 dark:text-gray-200 uppercase tracking-widest">Available for Remote Architecture Ops</span>
-              </div>
-            </motion.div>
-          ) : (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="inline-block mb-2"
-            >
-              <div className="inline-flex items-center space-x-2 bg-[#fdfbf7]/80 dark:bg-[#352c26]/80 backdrop-blur-sm border border-[#e6ded8] dark:border-[#4a3f35] px-4 py-1.5 rounded-full shadow-sm shadow-[#4a3f35]/5">
-                <span className="text-xs font-serif font-bold text-[#8c7a6b] dark:text-[#d1c8c0] uppercase tracking-widest italic">Actively taking on new partners</span>
-              </div>
-            </motion.div>
-          )}
-
           {/* Name */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}

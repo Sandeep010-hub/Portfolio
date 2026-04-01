@@ -41,13 +41,22 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const navItems = [
+  const softwareItems = [
     { name: 'Home', href: '#home' },
     { name: 'Skills', href: '#tech-stack' },
     { name: 'Projects', href: '#projects' },
     { name: 'Experience', href: '#experience' },
     { name: 'Contact', href: '#contact' },
   ]
+
+  const explorerItems = [
+    { name: 'Home', href: '#home' },
+    { name: 'LinkedIn / Stats', href: '#insights' },
+    { name: 'Research (AEO)', href: '#projects' },
+    { name: 'Contact', href: '#contact' },
+  ]
+
+  const navItems = mode === 'software' ? softwareItems : explorerItems
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href)
