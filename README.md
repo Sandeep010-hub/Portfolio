@@ -1,8 +1,7 @@
 # ⚡ Yaswanth Sai Sandeep Kalagatla: The 2026 Architectural Manifest
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-Live-cyan?style=for-the-badge)](https://yaswanths-portfolio.vercel.app)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Live-cyan?style=for-the-badge)](https://saisandeepkalagatala.vercel.app/)
 [![Tech Stack](https://img.shields.io/badge/Stack-Next.js%2016%20%7C%20FastAPI%20%7C%20AWS-blue?style=for-the-badge)](https://github.com/Sandeep010-hub/Portfolio)
-[![Identity](https://img.shields.io/badge/Identity-Dual%20Engine-amber?style=for-the-badge)](#-the-dual-identity-engine)
 
 This repository houses a high-frequency, dual-identity portfolio ecosystem. Engineered to transcend the traditional static resume, it operates as a **dynamic identity engine** that adapts its entire architectural, visual, and content layer based on the viewer's objective.
 
