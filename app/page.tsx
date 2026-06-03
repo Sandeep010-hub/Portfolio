@@ -1,11 +1,8 @@
-import HeroSection from '../components/HeroSection'
-import TechStackSection from '@/components/TechStackSection'
-import ProjectShowcase from '@/components/ProjectShowcase'
-import TimelineSection from '@/components/TimelineSection'
-import ContactSection from '@/components/ContactSection'
-import Footer from '@/components/Footer'
-import Navigation from '@/components/Navigation'
-import MainContent from '@/components/MainContent'
+import HeroSection from '@/components/sections/HeroSection'
+import ContactSection from '@/components/sections/ContactSection'
+import Footer from '@/components/layout/Footer'
+import Navigation from '@/components/layout/Navigation'
+import MainContent from '@/components/layout/MainContent'
 
 export default function Home() {
   return (
