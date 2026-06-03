@@ -88,18 +88,32 @@ const Navigation = () => {
             whileHover={{ scale: 1.05 }}
             className={`flex items-center space-x-3 z-20 ${mode === 'software' ? 'font-sans' : 'font-serif'}`}
           >
-            <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-500 ${
-              mode === 'software'
-                ? 'bg-gradient-to-r from-cyan-500 to-blue-600 shadow-md shadow-blue-500/20'
-                : 'bg-gradient-to-br from-[#8c7a6b] to-[#4a3f35] dark:from-[#d4c8bf] dark:to-[#8c7a6b] rounded-full'
-            }`}>
-              <span className={`text-white font-bold ${mode === 'software' ? 'text-sm' : 'text-lg italic font-serif text-[#fdfbf7] dark:text-[#25201b]'}`}>YS</span>
-            </div>
             <button
               onClick={() => scrollToSection('#home')}
-              className="bg-transparent border-none outline-none cursor-pointer p-0 m-0 flex flex-col items-start"
+              className="bg-transparent border-none outline-none cursor-pointer p-0 m-0 flex items-center space-x-3 text-left"
               aria-label="Go to home section"
             >
+              {mode === 'software' ? (
+                <svg className="w-10 h-10 select-none filter drop-shadow-[0_0_8px_rgba(6,182,212,0.4)]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  {/* Outer Tech Hexagon */}
+                  <path d="M50 8 L86 29 L86 71 L50 92 L14 71 L14 29 Z" stroke="url(#logoHexGrad)" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
+                  {/* Intertwined YS Monogram lines inside */}
+                  <path d="M44 42 L50 50 M56 42 L50 50 V60" stroke="currentColor" className="text-gray-900 dark:text-gray-100" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
+                  {/* Pulsing center node dot */}
+                  <circle cx="50" cy="50" r="3" fill="#22d3ee" className="animate-pulse" />
+                  <defs>
+                    <linearGradient id="logoHexGrad" x1="14" y1="8" x2="86" y2="92" gradientUnits="userSpaceOnUse">
+                      <stop stopColor="#06b6d4" />
+                      <stop offset="1" stopColor="#3b82f6" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              ) : (
+                <div className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-500 bg-gradient-to-br from-[#8c7a6b] to-[#4a3f35] dark:from-[#d4c8bf] dark:to-[#8c7a6b] flex-shrink-0">
+                  <span className="text-lg italic font-serif text-[#fdfbf7] dark:text-[#25201b] font-bold">YS</span>
+                </div>
+              )}
+              
               <span className={`text-lg transition-colors duration-500 ${
                 mode === 'software'
                   ? 'font-bold bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent tracking-tight'
@@ -113,13 +127,6 @@ const Navigation = () => {
           {/* Desktop Navigation */}
           {mode === 'software' ? (
             <div className="hidden md:flex items-center space-x-6 border border-gray-200 dark:border-gray-800 rounded-full px-6 py-2 bg-white/50 dark:bg-[#0f172a]/50 backdrop-blur-md shadow-lg shadow-blue-900/5">
-              <div className="flex items-center space-x-2 mr-4 bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full border border-gray-200 dark:border-gray-700">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
-                </span>
-                <span className="text-[10px] font-mono font-bold text-gray-700 dark:text-gray-300 uppercase tracking-widest">Sys.Online</span>
-              </div>
               {navItems.map((item) => (
                 <a
                   key={item.name}
