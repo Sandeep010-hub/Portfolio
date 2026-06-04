@@ -10,7 +10,7 @@ const TimelineSection = () => {
 
   if (mode === 'software') {
     return (
-      <section id="experience" className="py-24 bg-transparent scroll-mt-20">
+      <section id="experience" className="pt-24 pb-12 bg-transparent scroll-mt-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -32,7 +32,7 @@ const TimelineSection = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
-                className="relative pl-10 pb-16 group"
+                className="relative pl-10 pb-16 last:pb-4 group"
               >
                 {/* Node Dot */}
                 <div className="absolute left-[-4px] top-1.5 w-[7px] h-[7px] bg-gray-300 dark:bg-gray-700 rounded-full group-hover:bg-green-500 transition-colors shadow-[0_0_0_4px_var(--bg-color)]" style={{ '--bg-color': 'oklch(var(--background))' } as any} />
