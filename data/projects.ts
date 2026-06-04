@@ -21,55 +21,87 @@ export const software_data: Project[] = [
   {
     id: 'raglens-ai',
     title: 'RAGLens AI',
-    description: 'Enterprise-grade Agentic RAG system for high-concurrency real-time AI data visualization.',
-    longDescription: 'Architected a distributed knowledge engine using FastAPI and LangGraph to process unstructured data with 98% accuracy[cite: 134, 181]. Optimized for high availability and fault-tolerant data retrieval in production environments[cite: 107, 157].',
+    description: 'Multi-Agent RAG System over ~8,000 unstructured documents with LangGraph orchestration.',
+    longDescription: 'Designed and developed a production-grade intelligent search system end-to-end. Leverages a LangGraph ReAct multi-actor orchestration flow to perform document ingestion, chunk embedding, pgvector ANN search, LLM synthesis, and source-cited response generation.',
     image: '/RAGLens-ai.png',
-    technologies: ['FastAPI', 'Next.js 15', 'LangGraph', 'PostgreSQL', 'Python'],
+    technologies: ['Python', 'Node.js', 'FastAPI', 'PostgreSQL (pgvector)', 'Redis', 'React 18'],
     category: 'AI Integration',
     role: 'Lead Full-Stack Developer',
     duration: 'Jan 2026 - Present',
     githubUrl: 'https://github.com/Sandeep010-hub/RAGLens_AI',
-    features: ['Multi-agent orchestration', 'Sub-200ms latency [cite: 106, 158]', 'Context-aware retrieval'],
-    challenges: ['Maintaining 99.9% uptime [cite: 108, 158]', 'Vector search optimization'],
-    results: ['98% data accuracy [cite: 134, 181]', 'Sub-200ms real-time interaction [cite: 106, 158]'],
+    features: [
+      'LangGraph ReAct multi-agent orchestration',
+      'pgvector ANN similarity search over ~8,000 documents',
+      'Harness evaluating 50 semantic query pairs'
+    ],
+    challenges: [
+      'Mitigating retrieval precision@3 failures',
+      'Scaling concurrent request latencies'
+    ],
+    results: [
+      'Redis cache-hit rate of 73%, cutting latency from 1.8s to 0.4s',
+      'Retrieval precision@3 improved from 0.64 to 0.81'
+    ],
     featured: true,
-    tags: ['Agentic RAG', 'AI Architecture', 'FastAPI']
+    tags: ['LangGraph', 'Agentic RAG', 'FastAPI', 'pgvector']
   },
   {
     id: 'promptcraft-fusion',
     title: 'PromptCraft Fusion',
-    description: 'Cloud-integrated AI platform utilizing serverless Edge Functions for 5x prompt quality improvement[cite: 126, 177].',
-    longDescription: 'Engineered an AI-Native platform using Supabase Edge Functions and Gemini API[cite: 124, 175]. Optimized high-latency retrieval via advanced caching and multimodal storage for sub-second performance[cite: 127, 178].',
+    description: 'AI-Enabled SaaS platform utilizing serverless Edge Functions for prompt benchmarking.',
+    longDescription: 'Full-stack SaaS platform built for LLM prompt versioning, A/B testing, and performance benchmarking. Optimized latency-critical routes via Vercel Edge Functions vs Node.js serverless comparison.',
     image: '/prompt-craft.png',
-    technologies: ['Next.js 15', 'Supabase', 'Gemini API', 'TypeScript', 'Edge Functions'],
+    technologies: ['Next.js 15', 'TypeScript', 'Supabase', 'Vercel Edge Functions', 'Node.js'],
     category: 'AI Integration',
     role: 'Full-Stack Architect',
     duration: 'Aug 2025 - Present',
     githubUrl: 'https://github.com/Sandeep010-hub/promptcraft-fusion',
     liveUrl: 'https://promptcraft-fusion.netlify.app/',
-    features: ['Automated prompt scoring', 'Multimodal caching [cite: 127, 178]', 'RBAC security [cite: 120, 171]'],
-    challenges: ['Mitigating rendering blocks', 'Serverless state scaling'],
-    results: ['5x quality improvement [cite: 126, 177]', 'Sub-second performance [cite: 127, 178]'],
+    features: [
+      'LLM prompt versioning and A/B benchmarking',
+      'Supabase row-level security and JWT user isolation',
+      'Edge Functions vs Node.js serverless benchmarking'
+    ],
+    challenges: [
+      'Diagnosing browser-side performance bottlenecks',
+      'Managing cold start constraints'
+    ],
+    results: [
+      'Vercel Edge cold-starts reduced to ~180ms vs 1.1s',
+      'Lighthouse score improved from 61 to 94 via route-level code-splitting',
+      'Zero runtime type errors across 3 months of production'
+    ],
     featured: true,
-    tags: ['Generative AI', 'Serverless', 'Supabase']
+    tags: ['Next.js', 'Vercel Edge', 'Supabase', 'SaaS']
   },
   {
     id: 'elite-construction',
     title: 'Elite Construction & Design',
-    description: 'High-performance responsive platform with 95+ Lighthouse scores[cite: 130, 185].',
-    longDescription: 'Architected a world-class responsive platform achieving top-tier performance through code-splitting and lazy-loading, reducing initial bundle size by 40%[cite: 131, 186].',
+    description: 'High-performance responsive platform built from Figma specs with 90+ Lighthouse scores.',
+    longDescription: 'Designed and built a high-performance web application in React 18 + TypeScript, collaborating from Figma specs (UX/UI design handoff) through the full product feature development lifecycle to production. Implemented object-oriented component architecture.',
     image: '/elite.png',
-    technologies: ['React 18', 'TypeScript', 'Vite', 'Tailwind CSS'],
+    technologies: ['React 18', 'TypeScript', 'Node.js', 'Tailwind CSS', 'GitHub Actions'],
     category: 'Frontend',
     role: 'Lead Front-end Architect',
     duration: 'Aug 2025 - Present',
     githubUrl: 'https://github.com/Sandeep010-hub/eliteConstructer',
     liveUrl: 'https://eliteconstruct.netlify.app',
-    features: ['95+ Lighthouse score [cite: 130, 185]', 'Multi-step quote form', 'Accessibility-first (ARIA) [cite: 130, 185]'],
-    challenges: ['Bundle size optimization [cite: 131, 186]', 'Complex form state'],
-    results: ['40% bundle size reduction [cite: 131, 186]', 'Enhanced lead conversion'],
+    features: [
+      'UI/UX design handoff from Figma specifications',
+      'WCAG 2.1 compliance (ARIA, focus state management)',
+      'GitHub Actions automated lint & compile testing'
+    ],
+    challenges: [
+      'Enforcing strict cross-browser compatibility',
+      'Handling responsive layout structures'
+    ],
+    results: [
+      'Lighthouse scores of 90+ across Performance, Accessibility, and SEO',
+      'Zero manual deploy steps from git commit to Netlify production',
+      'Unit & integration testing verified via Vitest and Testing Library'
+    ],
     featured: true,
-    tags: ['Performance', 'Accessibility', 'UI/UX']
+    tags: ['React 18', 'TypeScript', 'Figma Handoff', 'CI/CD']
   },
   {
     id: 'kiritara-resort',
@@ -91,8 +123,8 @@ export const software_data: Project[] = [
   {
     id: 'parallax-archive',
     title: 'Archive Insight',
-    description: 'Advanced Semantic Analysis platform with an interactive Physics-based UI[cite: 9].',
-    longDescription: 'Leverages a Semantic Analysis Engine to detect idea-level duplication and assess project novelty[cite: 4]. Features a dynamic Particle Canvas Hero and Bento Grid explorer[cite: 9, 10].',
+    description: 'Advanced Semantic Analysis platform with an interactive Physics-based UI.',
+    longDescription: 'Leverages a Semantic Analysis Engine to detect idea-level duplication and assess project novelty. Features a dynamic Particle Canvas Hero and Bento Grid explorer.',
     image: '/parallax.png',
     technologies: ['React 18', 'TypeScript', 'Python', 'NLP', 'Canvas API'],
     category: 'Research',
@@ -100,43 +132,43 @@ export const software_data: Project[] = [
     duration: '2025 - 2026',
     liveUrl: 'https://parallax-thread.vercel.app',
     githubUrl: 'https://github.com/Sandeep010-hub/archive-insight',
-    features: ['Semantic Layer Analysis [cite: 6]', 'Particle Physics UI [cite: 9]', 'Originality Scoring [cite: 11]'],
-    challenges: ['Idea-level duplication detection [cite: 4]', 'Canvas performance'],
-    results: ['Transparent audit experience [cite: 5]', 'Explainable AI scoring [cite: 5]'],
+    features: ['Semantic Layer Analysis', 'Particle Physics UI', 'Originality Scoring'],
+    challenges: ['Idea-level duplication detection', 'Canvas performance'],
+    results: ['Transparent audit experience', 'Explainable AI scoring'],
     featured: true,
     tags: ['Data Viz', 'Academic Tech', 'Semantic UI']
   },
   {
     id: '64framez',
     title: '64Framez Portfolio',
-    description: 'High-performance creative agency presence with 70% load speed improvement[cite: 124].',
-    longDescription: 'Architected a visually striking presence for a media agency using lazy loading and Intersection Observer API to maximize engagement[cite: 124].',
+    description: 'High-performance creative agency presence with 70% load speed improvement.',
+    longDescription: 'Architected a visually striking presence for a media agency using lazy loading and Intersection Observer API to maximize engagement.',
     image: '/64Framez.png',
     technologies: ['Next.js', 'Tailwind CSS', 'Intersection Observer'],
     category: 'Client Project',
     role: 'Lead Front-end Architect',
     duration: '2024',
     liveUrl: 'https://64frames.com',
-    features: ['Lazy loading optimization [cite: 124]', 'Intersection Observer animations [cite: 124]', '95+ Lighthouse score [cite: 124]'],
+    features: ['Lazy loading optimization', 'Intersection Observer animations', '95+ Lighthouse score'],
     challenges: ['High-res media balancing'],
-    results: ['70% load speed improvement [cite: 124]', 'Premium brand reputation'],
+    results: ['70% load speed improvement', 'Premium brand reputation'],
     featured: true,
     tags: ['Creative Agency', 'Performance', 'SEO']
   },
   {
     id: 'webortex-official',
     title: 'Webortex Official',
-    description: 'Corporate sales engine driving a 200% increase in inbound acquisition[cite: 113, 164].',
-    longDescription: 'The primary digital presence for Webortex, built with a laser focus on technical SEO and inbound lead generation[cite: 113, 164].',
+    description: 'Corporate sales engine driving a 200% increase in inbound acquisition.',
+    longDescription: 'The primary digital presence for Webortex, built with a laser focus on technical SEO and inbound lead generation.',
     image: '/webortex.png',
     technologies: ['Next.js', 'Node.js', 'Headless CMS'],
     category: 'Full Stack',
     role: 'Lead Product Engineer',
     duration: '2024 - 2025',
     liveUrl: 'https://webortex.com',
-    features: ['Technical SEO architecture [cite: 113, 164]', 'SSR performance', 'Headless CMS'],
+    features: ['Technical SEO architecture', 'SSR performance', 'Headless CMS'],
     challenges: ['Scaling inbound conversion'],
-    results: ['200% acquisition growth [cite: 113, 164]', 'Market leader positioning'],
+    results: ['200% acquisition growth', 'Market leader positioning'],
     featured: true,
     tags: ['SaaS', 'Marketing Tech', 'Next.js']
   }

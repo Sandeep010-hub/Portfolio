@@ -14,214 +14,282 @@ export interface TechCategory {
 
 export const software_data: TechCategory[] = [
   {
+    name: 'Programming Languages',
+    description: 'Core programming and scripting languages',
+    technologies: [
+      {
+        name: 'TypeScript',
+        icon: '📘',
+        category: 'Languages',
+        proficiency: 'Advanced',
+        description: 'Typed superset of JavaScript for scalable app development'
+      },
+      {
+        name: 'JavaScript',
+        icon: '💛',
+        category: 'Languages',
+        proficiency: 'Expert',
+        description: 'Modern ES6+ web scripting and scripting paradigms'
+      },
+      {
+        name: 'Java',
+        icon: '☕',
+        category: 'Languages',
+        proficiency: 'Advanced',
+        description: 'Object-oriented programming, Collections, and Streams API'
+      },
+      {
+        name: 'Python',
+        icon: '🐍',
+        category: 'Languages',
+        proficiency: 'Advanced',
+        description: 'Scripting, backend service development, and AI prototyping'
+      },
+      {
+        name: 'C++',
+        icon: '🔵',
+        category: 'Languages',
+        proficiency: 'Intermediate',
+        description: 'Systems programming and object-oriented foundations'
+      },
+      {
+        name: 'SQL',
+        icon: '🗄️',
+        category: 'Languages',
+        proficiency: 'Advanced',
+        description: 'Relational query design and transactional scripting'
+      }
+    ]
+  },
+  {
     name: 'Frontend Development',
-    description: 'Modern frontend technologies and frameworks',
+    description: 'Modern frontend frameworks and libraries',
     technologies: [
       {
         name: 'React.js',
         icon: '⚛️',
         category: 'Frontend',
-        proficiency: 'Advanced',
-        description: 'Component-based UI library for building interactive user interfaces'
+        proficiency: 'Expert',
+        description: 'Component-based UI library (React 18) for high-performance apps'
       },
       {
         name: 'Next.js',
         icon: '▲',
         category: 'Frontend',
         proficiency: 'Advanced',
-        description: 'React framework for production with SSR, SSG, and API routes'
-      },
-      {
-        name: 'TypeScript',
-        icon: '📘',
-        category: 'Frontend',
-        proficiency: 'Advanced',
-        description: 'Typed superset of JavaScript for better development experience'
+        description: 'React framework for SSR, SSG, Edge routing, and code-splitting'
       },
       {
         name: 'Tailwind CSS',
         icon: '🎨',
         category: 'Frontend',
         proficiency: 'Expert',
-        description: 'Utility-first CSS framework for rapid UI development'
+        description: 'Utility-first styling for responsive cross-browser layouts'
+      },
+      {
+        name: 'Redux Toolkit',
+        icon: '🔄',
+        category: 'Frontend',
+        proficiency: 'Advanced',
+        description: 'State management and query caching for complex UIs'
       },
       {
         name: 'Framer Motion',
         icon: '✨',
         category: 'Frontend',
         proficiency: 'Advanced',
-        description: 'Production-ready motion library for React animations'
+        description: 'Production-ready motion library for fluid interactive elements'
       },
       {
-        name: 'HTML5',
-        icon: '🌐',
+        name: 'Headless UI',
+        icon: '🧩',
         category: 'Frontend',
-        proficiency: 'Expert',
-        description: 'Semantic markup language for web content structure'
-      },
-      {
-        name: 'CSS3',
-        icon: '🎯',
-        category: 'Frontend',
-        proficiency: 'Expert',
-        description: 'Advanced styling and layout capabilities for web design'
+        proficiency: 'Advanced',
+        description: 'Unstyled, fully accessible UI components matching WCAG ARIA specifications'
       }
     ]
   },
   {
-    name: 'Backend Development',
-    description: 'Server-side technologies and frameworks',
+    name: 'Backend & APIs',
+    description: 'Server-side runtimes, frameworks, and API protocols',
     technologies: [
       {
         name: 'Node.js',
         icon: '🟢',
         category: 'Backend',
         proficiency: 'Advanced',
-        description: 'JavaScript runtime for server-side development'
+        description: 'Server-side JavaScript runtime for highly concurrent architectures'
       },
       {
         name: 'Express.js',
         icon: '🚂',
         category: 'Backend',
         proficiency: 'Advanced',
-        description: 'Minimal and flexible Node.js web application framework'
+        description: 'Minimalist web application framework for Node.js APIs'
       },
       {
-        name: 'Java',
-        icon: '☕',
+        name: 'FastAPI',
+        icon: '⚡',
         category: 'Backend',
-        proficiency: 'Intermediate',
-        description: 'Object-oriented programming language for enterprise applications'
+        proficiency: 'Advanced',
+        description: 'Modern, high-performance Python framework for building RESTful APIs'
       },
       {
-        name: 'Python',
-        icon: '🐍',
+        name: 'REST APIs',
+        icon: '🔗',
         category: 'Backend',
-        proficiency: 'Intermediate',
-        description: 'Versatile programming language for web development and automation'
+        proficiency: 'Expert',
+        description: 'Resource-oriented API design with schema validations and JWT/RBAC auth'
+      },
+      {
+        name: 'Microservices',
+        icon: '🧱',
+        category: 'Backend',
+        proficiency: 'Advanced',
+        description: 'Distributed services architecture using module federation and decoupled APIs'
       }
     ]
   },
   {
-    name: 'Database & Storage',
-    description: 'Data persistence and management solutions',
+    name: 'Databases & Storage',
+    description: 'Data persistence, search engines, and query optimization',
     technologies: [
+      {
+        name: 'PostgreSQL',
+        icon: '🐬',
+        category: 'Database',
+        proficiency: 'Advanced',
+        description: 'Relational database profiled with EXPLAIN ANALYZE composite indexes'
+      },
       {
         name: 'MongoDB',
         icon: '🍃',
         category: 'Database',
         proficiency: 'Advanced',
-        description: 'NoSQL document database for flexible data storage'
-      },
-      {
-        name: 'MySQL',
-        icon: '🐬',
-        category: 'Database',
-        proficiency: 'Intermediate',
-        description: 'Relational database management system'
+        description: 'NoSQL document database, certified in Schema Design Patterns'
       },
       {
         name: 'Redis',
         icon: '🔴',
         category: 'Database',
-        proficiency: 'Intermediate',
-        description: 'In-memory data structure store for caching and sessions'
+        proficiency: 'Advanced',
+        description: 'In-memory caching layer for concurrent query latency cuts'
+      },
+      {
+        name: 'Supabase',
+        icon: '⚡',
+        category: 'Database',
+        proficiency: 'Advanced',
+        description: 'BaaS database utilizing Row-Level Security policies and JWT'
       }
     ]
   },
   {
-    name: 'DevOps & Deployment',
-    description: 'Development operations and cloud deployment',
+    name: 'AI & Agentic Systems',
+    description: 'Generative AI frameworks, vector databases, and multi-agent RAG',
     technologies: [
       {
-        name: 'Git',
-        icon: '📚',
-        category: 'DevOps',
+        name: 'LangGraph',
+        icon: '🦜',
+        category: 'AI',
         proficiency: 'Advanced',
-        description: 'Distributed version control system for code management'
+        description: 'Stateful, multi-actor orchestration framework for ReAct agents'
       },
       {
-        name: 'GitHub',
-        icon: '🐙',
-        category: 'DevOps',
+        name: 'Agentic RAG',
+        icon: '🧠',
+        category: 'AI',
         proficiency: 'Advanced',
-        description: 'Platform for version control and collaboration'
+        description: 'Self-correcting document ingestion, embedding search, and LLM synthesis'
       },
+      {
+        name: 'pgvector',
+        icon: '🗄️',
+        category: 'AI',
+        proficiency: 'Advanced',
+        description: 'Vector similarity search and ANN indexing inside PostgreSQL'
+      },
+      {
+        name: 'OpenAI API',
+        icon: '🤖',
+        category: 'AI',
+        proficiency: 'Advanced',
+        description: 'Integration of GPT text, embedding, and reasoning LLMs'
+      }
+    ]
+  },
+  {
+    name: 'DevOps & Cloud',
+    description: 'Cloud deployment, containerization, and automated pipelines',
+    technologies: [
       {
         name: 'Docker',
         icon: '🐳',
         category: 'DevOps',
-        proficiency: 'Intermediate',
-        description: 'Containerization platform for application deployment'
+        proficiency: 'Advanced',
+        description: 'Application containerization for reproducible environments'
       },
       {
-        name: 'Vercel',
-        icon: '▲',
+        name: 'GitHub Actions',
+        icon: '🐙',
         category: 'DevOps',
         proficiency: 'Advanced',
-        description: 'Platform for deploying frontend applications'
-      },
-      {
-        name: 'Netlify',
-        icon: '🌐',
-        category: 'DevOps',
-        proficiency: 'Advanced',
-        description: 'Web development platform for static sites and JAMstack'
+        description: 'CI/CD pipeline workflows implementing strict linters, tests, and deploys'
       },
       {
         name: 'AWS',
         icon: '☁️',
         category: 'DevOps',
         proficiency: 'Intermediate',
-        description: 'Cloud computing platform for scalable infrastructure'
+        description: 'Cloud computing infrastructure (Lambda, S3, EC2)'
+      },
+      {
+        name: 'Vercel Edge',
+        icon: '▲',
+        category: 'DevOps',
+        proficiency: 'Advanced',
+        description: 'Global serverless Edge Runtime deployment for sub-200ms cold starts'
+      },
+      {
+        name: 'Kubernetes',
+        icon: '☸️',
+        category: 'DevOps',
+        proficiency: 'Intermediate',
+        description: 'Orchestrating container deployment, scaling, and operations'
       }
     ]
   },
   {
-    name: 'Tools & Libraries',
-    description: 'Development tools and utility libraries',
+    name: 'Quality & Testing',
+    description: 'Code quality enforcement and testing suites',
     technologies: [
       {
-        name: 'Chart.js',
-        icon: '📊',
-        category: 'Tools',
+        name: 'SonarQube',
+        icon: '🛡️',
+        category: 'Quality',
         proficiency: 'Advanced',
-        description: 'JavaScript charting library for data visualization'
+        description: 'Static analysis quality gates checking code smells and security hotspots'
       },
       {
-        name: 'D3.js',
-        icon: '📈',
-        category: 'Tools',
-        proficiency: 'Intermediate',
-        description: 'Data-driven documents for dynamic data visualization'
-      },
-      {
-        name: 'JWT',
-        icon: '🔐',
-        category: 'Tools',
+        name: 'JUnit',
+        icon: '☕',
+        category: 'Quality',
         proficiency: 'Advanced',
-        description: 'JSON Web Tokens for secure authentication'
+        description: 'Java unit testing library targeting 80%+ path and branch coverage'
       },
       {
-        name: 'REST APIs',
-        icon: '🔗',
-        category: 'Tools',
+        name: 'Vitest',
+        icon: '🧪',
+        category: 'Quality',
         proficiency: 'Advanced',
-        description: 'Architectural style for designing networked applications'
+        description: 'Blazing fast Vite-native testing framework for React components'
       },
       {
-        name: 'WebSocket',
-        icon: '🔌',
-        category: 'Tools',
-        proficiency: 'Intermediate',
-        description: 'Protocol for real-time bidirectional communication'
-      },
-      {
-        name: 'Postman',
-        icon: '📮',
-        category: 'Tools',
+        name: 'React Testing Library',
+        icon: '🐙',
+        category: 'Quality',
         proficiency: 'Advanced',
-        description: 'API development and testing platform'
+        description: 'Testing React UI components from browser/user perspective'
       }
     ]
   }

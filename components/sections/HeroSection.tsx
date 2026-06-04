@@ -9,11 +9,11 @@ import { useProfileStore } from '../../store/useProfileStore'
 import Image from 'next/image'
 
 const softwareWords = [
-  'Full-Stack Architect',
-  'AI-Native Developer',
-  'System Orchestrator',
-  'EX-Founder @ WEBORTEX',
-  'Cloud Infrastructure Expert',
+  'Full-Stack Software Engineer',
+  'React & TypeScript Expert',
+  'Multi-Agent RAG Architect',
+  'Technical Co-Founder @ WEBORTEX',
+  'Backend Developer',
 ]
 
 const explorerWords = [
@@ -165,8 +165,8 @@ const HeroSection = () => {
           >
             {mode === 'software' ? (
               <>
-                <strong className="text-gray-700 dark:text-gray-200">Architecting Agentic RAG & AI-Native Ecosystems | Ex-Founder Mindset</strong><br />
-                Driving a 60% acceleration in development cycles via LLM-workflow automation and delivering elite front-end architectures with strict 99.9% uptime and sub-200ms latency parameters scaling across AWS and Vercel Edge.
+                <strong className="text-gray-700 dark:text-gray-200">Full Stack Software Engineer | React, TypeScript & Node.js</strong><br />
+                2+ years of professional experience across MERN, Java, and Python. Specialized in building high-performance web applications, multi-agent RAG pipelines, and automated CI/CD pipelines with strict performance metrics.
               </>
             ) : (
               <>

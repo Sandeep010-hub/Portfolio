@@ -6,9 +6,14 @@ import {
   SiNextdotjs, SiFastapi, SiTypescript, SiDocker, SiPostgresql, 
   SiReact, SiTailwindcss, SiFramer, SiHtml5, SiCss, SiNodedotjs, 
   SiExpress, SiPython, SiMongodb, SiMysql, SiRedis, SiGit, SiGithub, 
-  SiVercel, SiNetlify, SiPostman, SiOpenai
+  SiVercel, SiNetlify, SiPostman, SiOpenai, SiJavascript, SiCplusplus,
+  SiRedux, SiHeadlessui, SiGithubactions, SiKubernetes, SiSonarqubecloud,
+  SiVitest, SiTestinglibrary, SiSupabase
 } from 'react-icons/si'
-import { FaAws, FaJava, FaChartBar, FaChartLine, FaKey, FaNetworkWired, FaPlug } from 'react-icons/fa'
+import { 
+  FaAws, FaJava, FaChartBar, FaChartLine, FaKey, FaNetworkWired, FaPlug,
+  FaDatabase, FaBrain, FaProjectDiagram, FaVial
+} from 'react-icons/fa'
 import { useProfileStore } from '../../store/useProfileStore'
 import { software_data } from '../../data/techstack'
 
@@ -41,6 +46,26 @@ const getIconForTech = (name: string, fallback: any) => {
     'REST APIs': <FaNetworkWired />,
     'WebSocket': <FaPlug />,
     'Postman': <SiPostman />,
+    'JavaScript': <SiJavascript />,
+    'C++': <SiCplusplus />,
+    'SQL': <FaDatabase />,
+    'Redux Toolkit': <SiRedux />,
+    'Headless UI': <SiHeadlessui />,
+    'FastAPI': <SiFastapi />,
+    'Microservices': <FaNetworkWired />,
+    'PostgreSQL': <SiPostgresql />,
+    'Supabase': <SiSupabase />,
+    'LangGraph': <FaProjectDiagram />,
+    'Agentic RAG': <FaBrain />,
+    'pgvector': <SiPostgresql />,
+    'OpenAI API': <SiOpenai />,
+    'GitHub Actions': <SiGithubactions />,
+    'Vercel Edge': <SiVercel />,
+    'Kubernetes': <SiKubernetes />,
+    'SonarQube': <SiSonarqubecloud />,
+    'JUnit': <FaVial />,
+    'Vitest': <SiVitest />,
+    'React Testing Library': <SiTestinglibrary />,
   };
   return iconMap[name] || <span>{fallback}</span>;
 }
