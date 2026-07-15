@@ -211,7 +211,7 @@ const HeroSection = () => {
             </motion.button>
 
             <motion.a
-              href="https://drive.google.com/file/d/16MMExhs3ib2WTPm_BZJI3O_56sLrVc04/view?usp=sharing"
+              href="https://drive.google.com/file/d/1u6LfAMom_iz6ZMz5lIolsgIMTLjTqjQZ/view"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
